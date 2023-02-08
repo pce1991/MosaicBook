@@ -74,13 +74,25 @@ void Square(int32* n) {
 }
 ~~~
 
-Whenever you pass in the contents of an array to a function what you'll be passing in is a pointer. Since a pointer is just a memory address, it doesn't say anything about how much data is stored after it, just what the type is.
+This is the true value of pointers: it allows us to take one piece of data and pass it thru a series of functions that transform it. Remember, you can take a pointer of any variable, so you can use this with our basic data types, but also with structs. 
+
+Whenever you pass in the contents of an array to a function what you'll be passing in is a pointer. Since a pointer is just a memory address, it doesn't say anything about how much data is stored after it, just what the type is. 
 
 ~~~
 int32 numbers[100];
 
 int32 ReturnLargest(int32* array, int32 count) {
+   int32 largest = array[0];
    for (int i = 0; i < count; i++) {
-     
+	if (array[i] > largest) {
+	  largest = array[i];
+	}
    }
+   return largest;
 }
+~~~
+
+The default way that C/C++ handles strings are as pointers.
+
+char* myName = "Collin";
+
