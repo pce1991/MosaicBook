@@ -1,3 +1,5 @@
 # MosaicBook
 
-[a link](https://github.com/pce/MosaicBook/pointers.md)
+[Pointers](https://github.com/pce1991/MosaicBook/blob/main/pointers.md)
+[Allocation](https://github.com/pce1991/MosaicBook/blob/main/allocation.md)
+
