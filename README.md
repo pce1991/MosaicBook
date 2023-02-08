@@ -1,4 +1,4 @@
-# MosaicBook
+# Introduction to Game Programming with C++ in the Mosaic Game Engine
 
 [Download the Mosaic Engine on itch.io](https://etalgames.itch.io/mosaic)
 
