@@ -2,7 +2,7 @@
 
 [Download the Mosaic Engine on itch.io](https://etalgames.itch.io/mosaic)
 
-## Memory
+### Memory
 
 [Pointers](https://github.com/pce1991/MosaicBook/blob/main/pointers.md)
 
