@@ -144,6 +144,6 @@ Here is a list of data types in C++, and I define differently sized variants for
 
 integer: int64, int32, int16, int8
 unsigned integer: uint64, uint32, uint16, uint8
-floating point real number: float32, float64, real32, real64
+floating point real number: float32/real32, float64/real64
 
 There are more types that that which we'll learn about soon, and we'll be making our own types too, but that should get us started.
