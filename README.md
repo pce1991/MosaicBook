@@ -11,7 +11,7 @@
 
 [Conditionals](https://github.com/pce1991/MosaicBook/blob/main/conditionals.md)
 
-[Compiler Errors](https://github.com/pce1991/MosaicBook/blob/main/ compiler_errors.md)
+[Compiler Errors](https://github.com/pce1991/MosaicBook/blob/main/compiler_errors.md)
 
 [Printing](https://github.com/pce1991/MosaicBook/blob/main/printing.md)
 
