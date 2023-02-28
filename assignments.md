@@ -116,4 +116,109 @@ Tips:
 
     separate out your gameplay code from your rendering code. Always do your calls to SetTileColor last, this makes your logic simpler because you know everything that needs to happen in a frame will have happened by the time you start drawing tiles.
     Use the TilePositionsOverlap function to make collision simpler
+    
+Assignment 5
+In this assignment you will use loops and conditionals to draw various shapes.
+
+Your program will have N modes (one for each shape you want to draw). You'll use conditionals to choose which mode gets executed. Use the space bar to cycle between the modes. The basic structure looks like this.
+
+if (mode == 0) {
+
+// run code for mode 0
+
+}
+
+if (mode == 1) {
+
+// run code for mode 1
+
+}
+
+Each shape that you draw should use variables representing the size of the shape. For example if you are drawing a box instead of hard-coding the width and height use variables representing the size.
+
+Here are the shapes that each mode should draw:
+
+A line of a solid color
+A checkered line going between one color and black.
+A checkered line going between two different colors.
+A line that's broken into 3 parts. The first part should be red, the second part yellow, and the third part green.
+A box of a solid color.
+A box where each every even row is colorA and every odd row is colorB
+A checkered box of two different colors (both colors must be different than the background color).
+A box where one of the color channels increases from left to right.
+A box where one of the color channels increases from top to bottom.
+A box where one of the color channels increases until it reaches a value of 1 half way along the width, and then decreases from 1 to 0 on the other half.
+
+
+
+
+A useful operator is the "modulo" operator, written as %. This operator gives you the remainder when you divide two numbers. So a % b is equal to the remainder of a / b. For example 4 % 2 == 0 because the remainder of 4 / 2 is 0. However 3 % 2 == 1 because 3 / 2 has a remainder of 1. This is very useful for finding out if a number is even or odd. You can use conditionals inside your for loops.
+
+For example this will draw a row of 10 tiles where every other one goes unset.
+
+for (int32 x = 0; x < 10; x++) {
+        if (x % 2 == 0) {
+            SetTileColor(x, 0, 0.2f, 0.2f, 0.8f);
+        }
+ }
+ 
+ Assignment 6
+ In this assignment you'll write functions that set the values inside an array. Your program should have a mode corresponding to each item in this list. You should call the function corresponding to the mode your program is in. Your program should have 3 color arrays (1 for each channel) and 2 position arrays (1 for each component). The arrays should have enough capacity to store a position and color value for each tile on the grid (tho you don't have to use every element in the array). For example if your grid is 16x16 (the default value, you'd have a capacity of 256). You must use a larger grid size tho. You'll need a single count value which represents how much of the array you're using. In your MyMosaicUpdate you should loop over the elements in the array up to count and set the tile color for each element.
+
+You arrays should be declared globally, you do not need to pass them into your functions tho since functions have access to all global variables.
+
+To generate a random number you will use RandfRange() which takes two arguments, a minimum and a maximum. So to generate a number between 0 and 1 you'd say:
+
+float32 r = RandfRange(0.0f, 1.0f);
+
+Here are the modes:
+
+Set 10 elements in your array to a random position in your grid, and set each of their colors to red.
+Set 10 elements in your array to appear along one row starting in the top left corner; each of the color channels should have a random red value.
+Set 10 elements in your array appearing diagonally going from a red value of 1 to a red value of 0.5.
+Set 25 elements in your array such that you make a 5x5 square of random colors.
+Write a function that takes two arguments representing the starting position of square. Set 25 elements in your array such that you make a 5x5 square of random colors starting at that position.
+Set every element in your array such that the entire screen is filled with a random grey-scale value between 0 and 1.
+Set every element in your array such that the entire screen is filled with a random color.
+Set every element in your array such that the entire screen is filled with random colors generated within a certain range (for example the red value may be randomized between 0.4 and 0.6). The function should take arguments representing the min and max values of the randomized range.
+
+Your program must randomly generate the values once per mode switch, which means it should not generate values for the array every frame.
+
+Note that to generate a random number you must call the RandfRange function inside a function.
+
+Your program will have a similar structure to this example. Your functions should configure the contents of your array and then you simply loop over your arrays and call SetTileColor passing in elements from the array.
+
+// declare your arrays
+
+int32 modeIndex = 0;
+
+void Mode1() {
+
+    //...
+
+}
+
+void MyMosaicUpdate() {
+
+    if (InputPressed(Keyboard, Input_Space)) {
+
+        if (modeIndex == 1) {
+
+          Mode1();
+
+        }
+
+       modeIndex++;
+
+   }
+
+   // Loop over the elements in your array and call SetTileColor
+
+  for (int i = 0; i < elements; i++) {
+
+     SetTileColor(xs[i], ys[i], reds[i], greens[i], blues[i]);
+
+  }
+
+}
 
