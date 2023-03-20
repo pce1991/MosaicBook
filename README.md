@@ -25,6 +25,9 @@
 
 [Enums](https://github.com/pce1991/MosaicBook/blob/main/enums.md)
 
+[Structs](https://github.com/pce1991/MosaicBook/blob/main/structs.md)
+
+
 
 ### Memory
 
