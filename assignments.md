@@ -222,3 +222,41 @@ void MyMosaicUpdate() {
 
 }
 
+Assignment 7
+
+In this assignment you'll use structs and arrays to create a simple adventure game. You'll also use enums to represent certain states in your game (such as the level the player is on).
+
+    You should use structs to define certain objects in your game (such as a wall, or NPC)
+    You should have arrays for each of these types of objects so that a level can have multiple instances.
+    When doing logic with these objects (such as checking for player collision) you must use loops to iterate over the elements in the array.
+    You should have functions that create your levels by filling the arrays with data. If there is some permanent state you want to persist between levels (such as whether to spawn an item) you can use bools to determine if that data should be spawned.
+
+Your game structure will be very similar to assignment 4. You do not need all the exact same features (doors, keys) but you do need at least:
+
+    ability to move between levels somehow
+    NPCs
+    Objects the player collides with (walls, NPCs, enemies)
+
+Your grade is 60% technical correctness and 40% creativity (meaning you do interesting and engaging things with the game you create).
+
+Assignment 8
+
+In this assignment you'll create a series of minigames using the concepts you've learned. You should have at least 4 minigames. You can use text to display the controls and rules to the user.
+
+    Each minigame should have a clear victory and failure condition.
+    Each minigames should be about 10-30 seconds, keep it simple
+    When one minigame is finished you should move on to the next minigame.
+
+You should use structs to group together the data for your games; this keeps your program more organized than having a ton of global variables floating around.
+Some tips for coming up with game ideas:
+
+    What are some interesting things that would only be interesting for a few seconds. 
+    Try to distill an idea down to the most exciting part. For instance in a space-shooter you could skip all the windup, the first wave of enemies, and jump right into "dodge the bullets!"
+    Think of minigames that contrast with each other. For example you might have something where you dodge an obstacle, so in the next scene maybe you have to catch up to a block.
+    Think of things that are unexpected in some way, or engaging to figure out. 
+    Try to think of the emotional aspect of these games. For example a game about dodging a projectile has a very different feeling than a game about sliding down a hill.
+    Keep things very simple!
+
+Your grade is 50% on technical correctness and 50% on making interesting minigames. 
+See the notes on "Structs and Minigames example."
+
