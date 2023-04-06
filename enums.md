@@ -62,8 +62,10 @@ enum Flag {
 Notice that each of those numbers simply has the 1 at a higher place. This means you can use binary arithmetic to create a value that is a combination of these enum values.
 
 ```
-Flag flag = Flag_CanSpeak | Flag_CanShop;
+Flag flag = (Flag)(Flag_CanSpeak | Flag_CanShop);
 ```
+
+Notice the Flag in parentheses. This "casts" our result. The reason this is necessary is because when we use the bitwise-or operator we cast our values to integers so we can operate on them. But that means the result is still an int, but we want our result to be a Flag. So what we do is "cast" it. You can always try to cast any type of data to another type, such as casting an int32 to a float32, or a char to a bool. However not all conversions are always possible. 
 
 Note that this is using a single | instead of the || we use for boolean logic. This operator simply takes two values and does a bitwise-or on each element, producing a final output that has a one in every bit that was 1 in either of the inputs. 
 
