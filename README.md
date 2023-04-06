@@ -17,15 +17,20 @@
 
 [Frames and Time](https://github.com/pce1991/MosaicBook/blob/main/frames_and_time.md)
 
-[Functions](https://github.com/pce1991/MosaicBook/blob/main/functions_1.md)
+[Functions 1](https://github.com/pce1991/MosaicBook/blob/main/functions_1.md)
 
 [Loops](https://github.com/pce1991/MosaicBook/blob/main/loops.md)
 
 [Arrays](https://github.com/pce1991/MosaicBook/blob/main/arrays.md)
 
+[Strings](https://github.com/pce1991/MosaicBook/blob/main/strings.md)
+
 [Enums](https://github.com/pce1991/MosaicBook/blob/main/enums.md)
 
 [Structs](https://github.com/pce1991/MosaicBook/blob/main/structs.md)
+
+[Functions 2](https://github.com/pce1991/MosaicBook/blob/main/functions_2.md)
+
 
 
 
