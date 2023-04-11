@@ -1,0 +1,46 @@
+Assignment 1
+
+Download the Mosaic game engine following the links in "Reading 2342"
+  For an example of some of the features we'll be using look at "examples/my_game.cpp". 
+  To compile "my_game.cpp" go into "src/game_code.cpp", and at the top change 
+  #define MOSAIC 1 to 0
+  And set 
+  #define MY_GAME 0 to 1
+This project is going to get you familiar with some of the techniques you'll use to create an entity management system.
+
+    Create a struct Projectile storing position and velocity.
+    Create a DynamicArray of projectiles using a memory arena
+    At the beginning of your program spawn a bunch of projectiles with random velocities and update them every frame to move along their velocity.
+    When a projectile leaves a certain bounding area it should be deleted.
+    You should spawn a new projectile whenever you press the space bar.
+
+Try handling deleting these objects in two different ways.You can just use a boolean at the top of your program to determine which method is being used. You don't need to be able to swap methods while the program is running.
+
+    Method 1: keep a free list of the deleted projectiles. When you spawn a projectile you should see if there is anything in the freelist; if so, then use that index. Otherwise add an element to the dynamic array.
+    Method 2: when a projectile is deleted you should swap the thing at the end of your array to the index of the deleted projectile.
+
+
+Assignment 2
+
+In this project you'll create an entity manager. 
+ 
+Your game should have an "entity manager" or which you use to maintain handles to entity data, maintain stability when moving entity data around, and verify that entity handles still point to valid data.
+You will need to demonstrate that the following features work:
+
+    Have at least 2 entity types in addition to the base entity type. For example: Entity, Player, NPC
+    Spawning entities of different types
+    Deleting entities.
+    Use entity handles to reference entities and access their data. For example you may have one entity follow another entity.
+    Render all the entities using DrawSprite
+
+Your implementation needs to be robust enough that you could start making a game using it, so it's good to put it thru the ringer.
+
+Assignment 3
+
+For this assignment we'll use the entity management techniques we've learned to start building more complex features. Pick at least one of these features to implement. I think all of these tasks are things that you have the ability to do, but I think they're also important things to have experience building, so ideally you'd try your hand at each of them.
+
+    Implement the A* path finding algorithm for an entity to move around on a grid. You'll need to have some other entities in the world to represent obstacles and other charaters.
+    Use entities to create a level editor. You'll create a "palette" of entity types that you can select and place in the world. You'll then need be able to serialize their positions to a file on disk as well as parse that file to load a level.
+    Write a simple 2D rigid body physics system supporting circles and axis-aligned bounding boxes. Some entities will have a rigid body, but I recommend separating out the entity logic from the rigid bodies. Essentially you have two parallel sets of data, and the rigid bodies are concerned purely with simulating the physics and reporting back somehow to the entities about which objects collided.
+    Write a custom dialogue file format which you can use to populate your game with text lines for characters and support branching paths and player choices. This script format will also need a way for you to reference entities that exist inside the runtime of your game.
+
