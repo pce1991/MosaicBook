@@ -1,0 +1,101 @@
+We will read a file and then interpret the data in that file into our Spot struct and then render those spots.
+
+
+
+
+int32 spotIndex = 0;
+int32 spotCapacity = 0;
+int32 width = 0;
+int32 height = 0;
+
+struct Spot {
+    vec4 color;
+    vec2i position;
+};
+
+Spot *spots = NULL;
+void MyMosaicInit() {
+
+    SetMosaicGridSize(19, 19);
+    vec2i cursor = V2i(0, 0);
+    
+FileHandle file;
+    if (OpenFileForRead("data/file_reading_example.txt", &file)) {
+        bool isFirstLine = true;
+        bool widthMismatch = false;
+        int32 widthOnFirstLine = 0;
+        // First thing to do is read the file and find out the dimensions.
+        // Then we can find out what the data in the file is.
+        while (file.offset < file.size) {
+            char c = ReadChar(&file);
+            if (c == 13) {
+                c = ReadChar(&file);
+            }
+            // Assuming data is square
+            // @TODO: trigger an error if any line has more width than the top line.
+            if (c == 10) {
+                if (width < widthOnFirstLine) {
+                    widthMismatch = true;
+                    Print("Error on line %d, width mismatch", height);
+                }
+                
+                height++;
+                width = 0;
+                
+                isFirstLine = false;
+            }
+            else {
+                width++;
+                
+                if (isFirstLine) {
+                    widthOnFirstLine++;
+                }
+                if (width > widthOnFirstLine) {
+                    widthMismatch = true;
+                    Print("Error on line %d, width mismatch", height);
+                }
+            }
+        }
+
+        spotCapacity = widthOnFirstLine * height;
+        spots = PushSize(&Game->permanentArena, Spot, spotCapacity);
+        
+        // return to the beginning of the file.
+        FileSeek(&file, 0);
+        while (file.offset < file.size) {
+            char c = ReadChar(&file);
+            if (c == 13) {
+                c = ReadChar(&file);
+            }
+            
+            Print("%d %c", c, c);
+            if (spotIndex < spotCapacity) {
+                spots[spotIndex].position = cursor;
+                
+                if (c == '*') {
+                    spots[spotIndex].color = RGB(0.9f, 0.5f, 0.4f);
+                }
+                if (c == '@') {
+                    spots[spotIndex].color = RGB(0.3f, 0.8f, 0.5f);
+                }
+                if (c == 10) {
+                    cursor.y++;
+                    cursor.x = 0;
+                }
+                else {
+                    spotIndex++;
+                    cursor.x++;
+                }
+            }
+        }
+        CloseFile(&file);
+    }
+}
+
+void MyMosaicUpdate() {
+    ClearTiles(0, 0, 0);
+    for (int i = 0; i < spotCapacity; i++) {
+        SetTileColor(spots[i].position.x, spots[i].position.y, spots[i].color);
+    }
+    SetTileColor(9, 9, 1, 0, 0);
+}
