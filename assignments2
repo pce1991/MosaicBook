@@ -146,3 +146,27 @@ Tips:
            ObjectType type;
            int32 index;
         };
+
+ 
+ Misc Assignments
+ In this assignment you can create any game you want. Here are some suggestions:
+
+    Tetris
+        Use arrays and memory arenas
+        Animate when a line is cleared
+        Make the game snappy and feel good to play.
+        Scoring mechanics
+        Maybe try creating variations on the rules
+    Roguelike RPG (think Dungeon Crawl Stonesoup, Rogue, Nethack)
+        Randomly generate levels
+        Turn-based and discrete movement
+        Use text to create a UI
+    Text adventure (create a custom file format where you can write your script and load into the game)
+        Could focus on dialogue trees
+        You can use a struct to represent a "node" in the game which might have a line of dialogue or a choice that you can make. The nodes can also say what nodes to travel to.
+        Look into tokenization and parsing
+    Animation
+        Define a struct that represents a keyframe. A keyframe should have all the data necessary to define the visuals of a tile at a given point in time. It should also specify how long the keyframe lasts. An animation is simply interpolating between two keyframes. More complex animations can be created by stringing together longer sequences of keyframes.
+
+
+ 
