@@ -1,0 +1,30 @@
+Assignment 1
+
+  Download the Mosaic game engine here.
+   Compile the network_simple.cpp. You'll neet to change the ServerAddress to your local ip number. To get this simply run "ipconfig" from the command line and look for IPv4 address.
+   Right now we are not concerned with running things outside your local network. This is essentially what you do to run a LAN networked game. 
+   In this example one instance of the application is going to be the server. The server is simply concerned with maintaining a list of clients who have sent messages to the server.
+   Step thru this code in the debugger to see what is going on. I recommend looking at both this file and the network.h/network.cpp files.
+   For this assignment you'll create a chat program. 
+   Your chat program should do the following:
+
+    When a client launches it should try to connect to a server. It should keep trying until a connection is established.
+    When a user opens the program they should be prompted for their name (tip: for debugging purposes just use a preauthored name so you don't have to keep retyping it). They should hit enter to submit their name to the server and join the chat session.
+    The server should maintain a list of users who have connected, along with how long it's been since you've received any packets from them. If enough time has elapsed you should display them as "offline."
+    Once in a session you should display all the messages that have been sent, along with the time (local to the program) that they were sent. There is no need to scroll up/down on the messages, but make sure you maintain a log.
+    Messages should be able to be of any length. This means that you need to handle the case where one message must be sent over in multiple packets.
+    Try to handle the case where packets come out of order, or where packets are dropped (meaning the client needs some way to confirm that their message was received and doesnt need to be resent). Tip: simulate this unreliability and out of orderness in your code. This is a hard feature to implement with UDP, but the goal is to get you to try some approaches of how you could solve this problem.
+    Every user should see a line indicating which users are currently typing (hint: look at the various ways you can render text. Do any give you information about where the characters are drawn?)
+
+   Because of the requirements of this program the server and the clients will need to store similar data. For example the clients need to be sent the messages and store those in an array so you can display them; otherwise the client would have to get all the messages from the server every frame it needs to display them.
+
+Assignment 2
+
+You will use the Mosaic engine to make a basic real-time multiplayer program. You will use a server and client model where the server has authority but the clients predict what is going to happen to maintain stable motion.
+In this program there should be 4 users that can connect to the server. Each client should be able to move in the 8 cardinal directions.
+The "room" should have a few AABBs that players collide with. The players should also collide with each other.
+A client needs to tell the server that it's moving, and where it's predicting it will wind up. The server then updates its position according to its own authoritative logic and notifies the client of it's new verified position, correcting the prediction if necessary. The client should do this prediction for all the other clients in the room.
+Bonus points:
+allow players to push around an object so that both clients can see it moving.
+
+
