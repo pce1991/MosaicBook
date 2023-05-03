@@ -273,6 +273,7 @@ When the player hits a rock its game over.
 
 Here's some example code of spawning and deleting.
 
+```
 // Spawning example
 struct Guy {
     vec2 position;
@@ -308,3 +309,4 @@ void MyMosaicUpdate() {
         SetTileColor(g.position.x, g.position.y, 1, 0, 0);
     }
 }
+```
