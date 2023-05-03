@@ -261,15 +261,16 @@ Your grade is 50% on technical correctness and 50% on making interesting minigam
 See the notes on "Structs and Minigames example."
 
 Assignment 9
+
 In this project you'll create a game where the player needs to dodge certain obstacles and catch others. You will have two kinds of objects: coins and rocks. The player must collect the coins and avoid being hit by a rock. The idea is that the coins and the rocks fall from the top of the screen. The player can move horizontally. When the player is hit by a rock its game over, which should display a "game over" screen to the player they can continue past to keep playing. When they get a coin they get some points (how many is up to you).
 
 The goal of this assignment is to use arrays to spawn objects into your game. The idea is that you an array big enough to contain N elements, and as the game runs you'll use things from that array for the "live" objects in your game.
 
-Coins and rocks should fall from the sky at a certain speed.
-They should fall faster the longer the game goes on
-You should keep track of the players score during a round along with their high score between all the rounds (this will go away when the player closes the game)
-Your character should feel good to control. You will need to move by holding keys down.
-When the player hits a rock its game over.
+- Coins and rocks should fall from the sky at a certain speed.
+- They should fall faster the longer the game goes on
+- You should keep track of the players score during a round along with their high score between all the rounds (this will go away when the player closes the game)
+- Your character should feel good to control. You will need to move by holding keys down.
+- When the player hits a rock its game over.
 
 Here's some example code of spawning and deleting.
 
