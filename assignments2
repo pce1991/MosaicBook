@@ -146,6 +146,29 @@ Tips:
            ObjectType type;
            int32 index;
         };
+        
+        
+Assignment 8
+ 
+We'll take your sokoban game from assignment 7 and add the ability to read files from disk which define your levels. What you're doing is taking a file on disk and converting it into the level format your game uses.
+Your file format will consist of single characters representing an entity type (we call this a legend). The first row defines how many columns there are per row. For example let's say your legend was:
+Player: @
+Block: B
+Goal: $
+Ground: .
+Wall: #
+A level would look like:
+#####
+#.@.#
+#.B.#
+#.$.#
+#####
+
+You will read in a file which contains all the levels for your game. I strongly recommend tokenizing the file first, and then parsing the tokens, it'll be much easier to make decisions about how to convert into data.
+
+When reading the file you should report an error if any of your rows have differing numbers of columns or if you're using an invalid symbol.
+For bonus points you can expand the concept of your game to include more levels and interesting ideas.
+
 
  
  Misc Assignments
