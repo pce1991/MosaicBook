@@ -40,3 +40,8 @@
 
 [Allocation](https://github.com/pce1991/MosaicBook/blob/main/allocation.md)
 
+[Memory Arenas](https://github.com/pce1991/MosaicBook/blob/main/memory_arenas.md)
+
+[Parsing Files](https://github.com/pce1991/MosaicBook/blob/main/parsing_and_tokenization.md)
+
+
