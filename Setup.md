@@ -18,6 +18,7 @@ We have a basic work flow to run the engine that we will be using through out th
 2) Compile that code to create an executable program the computer can run
 3) Check for errors in creating the executable, jumping back to step 1 if needed.
 4) Run the executable
+5) Close the executable (if you try to compile while the exe is open you'll get an error and it can't compile successfully)
 
 Well we don't know how to write C++ code yet, so let's skip that and jump to step 2. Luckily there is some code I have already written for you, and it shouldn't produce any errors. So to compile our program in the command prompt you'll type:
 
