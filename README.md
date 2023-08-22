@@ -9,7 +9,7 @@
 ## Foundations
 [Introducing Mosaic](https://github.com/pce1991/MosaicBook/blob/main/mosaic_intro.md)
 
-[Variables and Values](https://github.com/pce1991/MosaicBook/blob/main/variables_and_value.md)
+[Variables and Values](https://github.com/pce1991/MosaicBook/blob/main/variables_and_values.md)
 
 [Conditionals](https://github.com/pce1991/MosaicBook/blob/main/conditionals.md)
 
