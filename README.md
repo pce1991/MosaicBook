@@ -44,6 +44,11 @@
 
 [Memory Arenas](https://github.com/pce1991/MosaicBook/blob/main/memory_arenas.md)
 
+[Dynamic Arrays](https://github.com/pce1991/MosaicBook/blob/main/dynamic_arrays.md)
+
 [Parsing Files](https://github.com/pce1991/MosaicBook/blob/main/parsing_and_tokenization.md)
 
+### Data Structures
+
+[Free List](https://github.com/pce1991/MosaicBook/blob/main/freelist.md)
 
