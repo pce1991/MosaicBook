@@ -13,6 +13,8 @@
 
 [Conditionals](https://github.com/pce1991/MosaicBook/blob/main/conditionals.md)
 
+[Common Problems for Beginners](https://github.com/pce1991/MosaicBook/blob/main/common_problems.md)
+
 [Compiler Errors](https://github.com/pce1991/MosaicBook/blob/main/compiler_errors.md)
 
 [Printing](https://github.com/pce1991/MosaicBook/blob/main/printing.md)
