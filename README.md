@@ -13,7 +13,7 @@
 
 [Frames and Time](https://github.com/pce1991/MosaicBook/blob/main/frames_and_time.md)
 
-[Conditionals](https://github.com/pce1991/MosaicBook/blob/main/conditionals.md
+[Conditionals](https://github.com/pce1991/MosaicBook/blob/main/conditionals.md)
 
 [Printing](https://github.com/pce1991/MosaicBook/blob/main/printing.md)
 
