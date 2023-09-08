@@ -54,7 +54,78 @@ Modify this code so that flag starts out as false.
 
 Now that isn't particularly interesting or powerful; all we're doing is manually saying what code we want to run. 
 
-So let's introduce our "boolean operators" which we can use to create expressions that will evaluate to either true or false based on the parameters of the equation.
+What if we can check user input to make changes to our code. 
+
+```
+// Notice that we declare this variable outside the cope of our function so that it is "global"
+// this way it is not going to be redeclared every frame.
+float32 r = 0.0f;
+
+void MyMosaicUpdate() {
+    // out InputPressed function takes a device and a special value representing our keys.
+    // you can find a complete list of keys in input.h, but for now we'll just use Space.
+    // When the function evaluates it returns a true value if the key is pressed. 
+    bool pressed = InputPressed(Keyboard, Input_Space);
+
+    if (pressed) {
+        r += 0.1f;
+    }
+
+    SetTileColor(0, 0, r, 0, 0);
+}
+
+```
+
+We could rewrite our condition like this to avoid creating the boolean variable, since our if statement will execute if whatever expression is inside it is true, that expression can be the returned result from InputPressed
+
+```
+if (InputPressed(Keyboard, Input_Space)) {
+    r += 0.1f;
+}
+```
+
+We can use our input to set a boolean value based on which key is pressed. 
+
+```
+bool flag = false;
+
+void MyMosaicUpdate() {
+    
+    if (InputPressed(Keyboard, Input_Space)) {
+        flag = false;
+    }
+    if (InputPressed(Keyboard, Input_Tab)) {
+        flag = true;
+    }
+
+    if (flag) {
+        SetTileColor(0, 0, 0, 1, 0);
+    }
+}
+```
+
+Or we could toggle that value with a single press, like a light switch. 
+
+```
+
+bool flag = false;
+
+void MyMosaicUpdate() {
+    
+    if (InputPressed(Keyboard, Input_Space)) {
+        flag = !flag;
+    }
+
+    if (flag) {
+        SetTileColor(0, 0, 0, 1, 0);
+    }
+}
+```
+
+Here we see the "not" operator which negates a boolean value, turning a true into false, and false into true. 
+
+
+Now let's introduce our "boolean operators" which we can use to create expressions that will evaluate to either true or false based on the parameters of the equation.
 
 The first operator we'll look at is "greater than", written <, which evaluates to true if the left hand side is greater than the right hand side. We'll use our variable "Time" so that we can see how our equation evaluates differently as our program runs. 
 
