@@ -53,5 +53,6 @@
 ### Advanced
 
 [Free List](https://github.com/pce1991/MosaicBook/blob/main/freelist.md)
+
 [Bitfields and Flags](https://github.com/pce1991/MosaicBook/blob/main/bitfields_and_flags.md)
 
