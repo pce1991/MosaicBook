@@ -24,7 +24,7 @@ Note that this just the definition of a function, the code inside will not actua
 Also be aware that like with variables the name has no semantic meaning. We colud call this function anything we wanted: Foo, DoNotColor3Tiles, CreateFullVideoGame.
 Just like variables we must declare functions before we are able to use them. Once we have defined this function before our MyMosaicUpdate(), we can call it.
 
-You want to make sure that you define your function before you call it. 
+You want to make sure that you define your function before you call it. You must define it at the top-most scope. 
 
 ```
 void MyMosaicUpdate() {
