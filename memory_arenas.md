@@ -58,5 +58,12 @@ void MyMosaicUpdate() {
             index++;
         }
     }
+
+   // you can use PushSize to push a specific sized block. For example:
+   int32 numbersCount = 100;
+   int *numbers = PushSize(&arena, numbersCount * sizeof(int32)); // pushes 400 bytes
+
+   // You can also use this to allocate a single struct
+   vec2 *oneVector = PushSize(&arena, sizeof(vec2));
 }
 ```
