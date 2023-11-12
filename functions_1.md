@@ -54,7 +54,7 @@ void MyMosaicUpdate() {
 }
 ```
 
-
+Your functions will have access to all your "global variables" (those defined outside any scope) as long as the definition comes before the definition of the function. 
 
 When we call this function our program will look at the arguments, and it'll create a variable within the scope of the function, and copy the value 4 into the variable x. Now we can use that value to compute which 3 tiles we want to color.
 Note that the variable only exists within the scope of our function. Therefore if we had another variable called x, that our function DrawThree is talking about a different variable; we are not copying the value 4 into the x declared within MyMosaicUpdate().
