@@ -61,9 +61,13 @@ void MyMosaicUpdate() {
 
    // you can use PushSize to push a specific sized block. For example:
    int32 numbersCount = 100;
-   int *numbers = PushSize(&arena, numbersCount * sizeof(int32)); // pushes 400 bytes
+   int *numbers = (int32 *)PushSize(&arena, numbersCount * sizeof(int32)); // pushes 400 bytes
 
    // You can also use this to allocate a single struct
-   vec2 *oneVector = PushSize(&arena, sizeof(vec2));
+   vec2 *oneVector = (vec2 *)PushSize(&arena, sizeof(vec2));
+
+   // since we ofte just want to push blocks of memory of the same type we have PushArray for that
+   int32 *numbers2 = PushArray(&arena, int32, 100);
+   // notice that this one does the casting for you and only needs the number of elements. 
 }
 ```
