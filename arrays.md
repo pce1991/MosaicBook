@@ -33,7 +33,7 @@ numbers[0] = 2; // first element
 numbers[1] = 1001; // second element
 ```
 
-It may seem strange that we use [1](#fn.1) for the first element, but we can consult our diagram to see why. If the array starts at address 1000, and we know each element in our array is 4 bytes, then we know the first element is at address 1000, the second is 1004, third at 1008, and so on. That gives us an expression: startaddress + (size * n) = addressofelementn.
+It may seem strange that we use 0 for the first element, but we can consult our diagram to see why. If the array starts at address 1000, and we know each element in our array is 4 bytes, then we know the first element is at address 1000, the second is 1004, third at 1008, and so on. That gives us an expression: startaddress + (size * n) = addressofelementn.
 
 One of the most useful traits of arrays is that we can iterate over them using loops.
 
