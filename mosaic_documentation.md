@@ -1,20 +1,6 @@
 How this documentation works:
 Function names are listed followed by their arguments. If there are multiple overloaded versions of a function all versions will be listed.
 
-## Global Varibales
-### Time
-Gives the current time in seconds since the program launched.
-
-### DeltaTime
-Gives the amount of time in seconds between the start of the last frame and the start of the current frame.
-
-### Keyboard
-A pointer to the keyboard device. Used to pass in to input functions.
-
-### Mouse
-A pointer to the mouse device. Used to pass in to input functions.
-
-
 ## Input
 
 ### InputPressed()
@@ -77,4 +63,18 @@ vec2 V2(float32 n)
 ```
 Evaluates to a vec2 with specified x and y values. If only one value is passed in sets both x and y to that value.
 
+
+
+## Global Varibales
+### Time
+Gives the current time in seconds since the program launched.
+
+### DeltaTime
+Gives the amount of time in seconds between the start of the last frame and the start of the current frame.
+
+### Keyboard
+A pointer to the keyboard device. Used to pass in to input functions.
+
+### Mouse
+A pointer to the mouse device. Used to pass in to input functions.
 
