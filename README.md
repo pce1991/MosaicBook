@@ -5,6 +5,7 @@
 
 [Setup](https://github.com/pce1991/MosaicBook/blob/main/Setup.md)
 
+[Visual Studio](https://github.com/pce1991/MosaicBook/blob/main/using_visual_studio.md)
 
 ## Foundations
 [Introducing Mosaic](https://github.com/pce1991/MosaicBook/blob/main/mosaic_intro.md)
