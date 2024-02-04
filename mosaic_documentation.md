@@ -63,7 +63,36 @@ vec2 V2(float32 n)
 ```
 Evaluates to a vec2 with specified x and y values. If only one value is passed in sets both x and y to that value.
 
+### Length(vec2 v)
+Returns the length of a vector.
 
+### Normalize(vec2 v)
+Returns the value of v normalized.
+
+### sinf(real32 t)
+Part of the C math library. Evaluates the sine function at value t.
+
+### Abs(real32 n)
+Returns the absolute value of n.
+
+### Min(real32 n, real32 m)
+Returns the minimum value of n and m.
+
+### Max(real32 n, real32 m)
+Returns the maximum value of n and m.
+
+### Lerp(real32 a, real32 b, real32 t)
+Returns the interpolated value between a and b for t. Note that t is not clamped between 0 and 1, so any values outside that range can return a value that is not between a and b. 
+There are also versions of this function for vectors
+```
+Lerp(vec2 a, vec2 b, real32 t)
+Lerp(vec3 a, vec3 b, real32 t)
+Lerp(vec4 a, vec4 b, real32 t)
+```
+Each of these does a component-wise interpolation.
+
+### bool TestAABBAABB(vec2 minA, vec2 maxA, vec2 minB, vec2 maxB)
+Tests whether two AABBs are overlapping, and if so returns true. 
 
 ## Global Varibales
 ### Time
