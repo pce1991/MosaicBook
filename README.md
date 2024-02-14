@@ -9,7 +9,7 @@
 
 [Mosaic Documentation](https://github.com/pce1991/MosaicBook/blob/main/mosaic_documentation.md)
 
-## Foundations
+## Programming Fundamentals
 [Introducing Mosaic](https://github.com/pce1991/MosaicBook/blob/main/mosaic_intro.md)
 
 [Variables and Values](https://github.com/pce1991/MosaicBook/blob/main/variables_and_values.md)
@@ -38,8 +38,9 @@
 
 [Functions 2](https://github.com/pce1991/MosaicBook/blob/main/functions_2.md)
 
+### Game Fundamentals
 
-
+[Raycasts](https://github.com/pce1991/MosaicBook/blob/main/raycasts.md)
 
 ### Memory
 
