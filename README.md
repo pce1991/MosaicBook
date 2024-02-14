@@ -7,6 +7,8 @@
 
 [Visual Studio](https://github.com/pce1991/MosaicBook/blob/main/using_visual_studio.md)
 
+[Mosaic Documentation](https://github.com/pce1991/MosaicBook/blob/main/mosaic_documentation.md)
+
 ## Foundations
 [Introducing Mosaic](https://github.com/pce1991/MosaicBook/blob/main/mosaic_intro.md)
 
