@@ -53,6 +53,20 @@ Returns the x coordinate of the tile the mouse is hovered over. If the mouse is 
 ### int32 GetMouseY()
 Returns the y coordinate of the tile the mouse is hovered over. If the mouse is off the grid returns -1.
 
+### DrawTextTop(vec4 color, real32 scale, const char *fmt, ...)
+
+For example:
+```
+DrawTextTop(V4(1, 1, 1, 1), 1.0f, "Time: %f", Time);
+```
+
+### DrawTextTile(vec2 position, real32 scale, vec4 color, const char *fmt, ...)
+
+For example:
+```
+DrawTextTile(V2(-2, 0), 0.5f, V4(1, 1, 1, 1), "Time: %f", Time);
+```
+
 
 ## Math Functions
 ### V2()
