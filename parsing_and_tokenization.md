@@ -35,7 +35,7 @@ enum TokenType {
 };
 ```
 
-The token itself needs to store its type, along with a pointer to the string contents and the length of the token.
+The token itself needs to store its type, along with a pointer to the string contents and the length of the token. We can store a pointer instead of needing to copy the string from the file for each token. Keep in mind this means a
 
 
 ```
@@ -46,7 +46,7 @@ struct Token {
 };
 ```
 
-Instead of copying a string for the token we use the pair of the pointer and its length so that we simply index into the file. This saves us a lot of unecessary allocations, the only caveat is the tokens are only valid while the file is open. 
+Instead of copying a string for the token we use the pair of the pointer and its length so that we simply index into the file. This saves us a lot of unecessary allocations, the only caveat is the token's pointer are only valid while the file is open since the data will go away when you close it. You can always copy the strings from the file if you need them outside the lifetime of the file (for example you won't need the string representing positions, but you might want to store the level's name). 
 
 ```
 void ReadFile() {
