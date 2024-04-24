@@ -37,7 +37,6 @@ enum TokenType {
 
 The token itself needs to store its type, along with a pointer to the string contents and the length of the token.
 
-@TODO: write functions showcasing consuming tokens matching a certain string or of a certain type
 
 ```
 struct Token {
