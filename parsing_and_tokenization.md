@@ -1,15 +1,20 @@
   When you have a file that you want to read into your program you need to parse the file. For example you may have a file with a simple mapping from a character to a type of entity in your game. So the file:
+```
 *****
 *@..*
 *****
+```
+
 You may interpret an asterisk as a wall, a period as empty space, and the at sign as the player.
 
 Often tho we have more complicated files where a direct 1:1 mapping is not possible. For example you may need to store a list of positions of where an object is in a level. Your file may look like this:
 
+```
 #objects
 (2 4)
 (4 6)
 (7 8)
+```
 
 So now you need somehow read the contents of the file and know that each pair of numbers in parentheses represents the position of an object. 
 
