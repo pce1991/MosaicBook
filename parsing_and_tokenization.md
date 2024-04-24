@@ -20,6 +20,7 @@ To handle this complexity we introduce the idea of "tokenization", a process whe
 
 In this example we have 5 token types. We'll use an enum to represent our token types.
 
+```
 enum TokenType {
   TokenType_LeftParen,
   TokenType_RightParen,
@@ -27,19 +28,23 @@ enum TokenType {
   TokenType_Integer,
   TokenType_Identifier
 };
+```
 
 The token itself needs to store its type, along with a pointer to the string contents and the length of the token.
 
 @TODO: write functions showcasing consuming tokens matching a certain string or of a certain type
 
+```
 struct Token {
    TokenType type;
    char *start;
    int32 length;
 };
+```
 
 Instead of copying a string for the token we use the pair of the pointer and its length so that we simply index into the file. This saves us a lot of unecessary allocations, the only caveat is the tokens are only valid while the file is open. 
 
+```
 void ReadFile() {
     DynamicArray<Token> tokens = MakeDynamicArray<Token>(&Game->frameMem, 100);
     File file = {};
@@ -76,3 +81,4 @@ void ReadFile() {
 
     CloseFile(&file);
 }
+```
