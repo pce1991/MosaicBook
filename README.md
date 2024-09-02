@@ -20,7 +20,7 @@
 
 [Printing](https://github.com/pce1991/MosaicBook/blob/main/printing.md)
 
-[Common Problems for Beginners](https://github.com/pce1991/MosaicBook/blob/main/common_problems.md)
+[Common Problems for Beginners](https://github.com/pce1991/MosaicBook/blob/main/common_errors.md)
 
 [Compiler Errors](https://github.com/pce1991/MosaicBook/blob/main/compiler_errors.md)
 
