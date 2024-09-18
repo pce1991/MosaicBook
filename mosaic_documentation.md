@@ -105,6 +105,12 @@ Lerp(vec4 a, vec4 b, real32 t)
 ```
 Each of these does a component-wise interpolation.
 
+### bool TestPointCircle(vec2 pt, vec2 center, float32 radius)
+Test whether the point is in the circle.
+
+### bool TestCircleCircle(vec2 centerA, float32 radiusA, vec2 centerB, float32 radiusB)
+Tests whether two circles are overlapping.
+
 ### bool TestAABBAABB(vec2 minA, vec2 maxA, vec2 minB, vec2 maxB)
 Tests whether two AABBs are overlapping, and if so returns true. 
 
