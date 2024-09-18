@@ -226,9 +226,10 @@ void MyMosaicUpdate() {
   }
   timer += DeltaTime;
 }
-
+```
 
 We can also use InputHeld to determine when a key is being held down. 
+
 ```
 real32 red = 0.0f;
 
