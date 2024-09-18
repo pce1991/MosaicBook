@@ -225,6 +225,19 @@ void MyMosaicUpdate() {
      timer = 0;
   }
   timer += DeltaTime;
+}
+
+
+We can also use InputHeld to determine when a key is being held down. 
+```
+real32 red = 0.0f;
+
+void MyMosaicUpdate() {
+   if (InputHeld(Keyboard, Input_Space)) {
+      red += 0.1f * DeltaTime;
+   }
+
+   SetTileColor(0, 0, red, 0, 0, 0);
 } 
 ```
 
