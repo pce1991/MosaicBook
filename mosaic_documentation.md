@@ -67,6 +67,16 @@ For example:
 DrawTextTile(V2(-2, 0), 0.5f, V4(1, 1, 1, 1), "Time: %f", Time);
 ```
 
+### DrawTextScreen(vec2 position, real32 scale, vec4 color, bool center, const char *fmt, ...)
+
+This draws text any where on the screen using normalized coordinates. 
+
+For example:
+```
+DrawTextTile(V2(0.5, 0.5), 0.5f, V4(1, 1, 1, 1), "Time: %f", Time);
+```
+
+
 
 ## Math Functions
 ### V2()
