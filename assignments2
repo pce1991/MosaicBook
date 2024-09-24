@@ -1,0 +1,197 @@
+Assignment 1
+
+In this assignment we'll use timers, loops, functions, and input to create a visual program. Your program should have 4 "modes", each of which represents a different visual "piece." You should toggle between the modes using the space bar.
+A mode should be written as a function. When a mode is active you should call that function from MyMosaicUpdate(). The mode should use a loop to iterate over all the tiles in the grid and set them to colors. Tiles do not all have to be the same color. What colors you're using should change over time to create an evolving image. You should use the idea of keyframes to represent how your image is changing.
+When you change modes your animation timers should reset.
+An example of a mode might be a function which starts off with a red screen and slowly blends towards a blue screen, then back to a red screen. That would be pretty simple, so try to do something more interesting than setting every tile to the same color.
+Your grade is based on two factors:
+70% is the correctness of your program.
+30% is the visual design of your pieces (are the colors nice, are they distinct, etc)
+To get started try implementing one mode first as a function. Create something visually interesting. As you work on that other ideas will occur to you for different modes.
+The Lerp() function may be useful to you.
+Make sure you declare your global variables at the top.
+Make sure you declare all your functions above your MyMosaicUpdate()
+The outline of your code would look something like this:
+void ModeA() {
+}
+void MyMosaicUpdate() {
+  if (mode == 0) {
+    ModeA();
+  }
+}
+
+To submit this assignment you must create a zip of your project directory and attach it to your submission.
+
+Assignment 2
+PONG
+
+Assignment 2
+
+In this assignment we'll create a game called Breakout, very similar to Pong. In breakout the play controls a paddle which can bounce a ball. Above the player are a grid of "bricks" which the player needs to break. A brick is broken whenever the ball hits it. The game consists of a series of levels; each time they break all the bricks on a level they move onto the next level. As the game goes on there should be more bricks, up to a maximum limit. It is up to you as the game designer to determine how big the bricks and paddles are, in addition the what the maximum number of bricks are, and how much they increase per level.
+
+Where a detail hasn't been specified, it is up to you as the game designer to make a decision; things like the speed of the game, where the text is drawn, what colors you pick, are some of the things you'll need to make design decisions about. 10% of your grade is based on these decisions; it's obviously subjective, but I am going to look for things like "do these colors hurt my eyes", "is it too slow to enjoy." The other 90% of your grade comes down to the technical details.
+
+The player should be able to control the paddle both with the keyboard and the mouse. To move the paddle with the mouse you will need to look at the mouse position using GetMousePositionX() to determine which direction the paddle should be moving in. GetMousePositionX() gives you the x coordinate of the tile the mouse is hovered over. One way to do this would be to look at the position of the mouse and move the paddle towards that position at some rate. Since you can use two input devices you need to toggle which one is the active based on which device had the last change. You also need to make sure that the paddle cannot go off the screen, and you need to handle the case where the mouse is off the screen.
+
+You will need to create structs that define some of your play elements (like the ball, the bricks, etc).
+You will need to store arrays of these structs; you should also keep track of the size of your array and how many elements you are using.
+The ball's color should change based on its speed.
+A brick should be more than one tile big.
+You should draw a trail behind the ball based on its previous positions over the last N frames.
+When the ball hits the paddle the paddle should change colors and then animate back towards its default color.
+When the ball hits the paddle you should transfer some of the paddle's x velocity to the ball.
+The ball should never be in an "invalid" position; for example when it collides with a brick it's important that it never be rendered inside the brick.
+You should change the color of the background and the color of the bricks every level.
+When the ball hits a brick the brick should be "destroyed" and the ball should bounce off of it. The brick should also animate from its default color to a "hit" color; once it reaches the hit color you should stop drawing it.
+The bricks should be placed on top of the screen, and the player paddle on the bottom. The ball should bounce off of the top of screen as well as the left and right.
+The player should have one life; once the ball reaches the bottom of the screen it is game over for the player.
+You should keep track of which level the player is on and how many seconds they've been playing. You should draw text onto the screen displaying this data to the player.
+You should also keep track of the highest level the player has gotten to and the maximum number of seconds they've played. Display this to the player as the high score.
+
+You should have a menu for the game that displays the controls to the player, and tells them to press a button to start playing the game. You should return to this screen when the player reaches a game over state. I recommend having two functions, one for the normal game update and another for the menu; you simply call one or the other based on what state you're in.
+
+At the start of the game the ball should fall from the middle of the screen, between the bricks and the player.
+You'll need to use structs, arrays, and loops.
+
+
+Assignment 3
+
+In this assignment you will write a program that randomly generates images. Your image must have the following info: width, height, and a buffer of vec4s for the colors of each pixel in the image. You must use malloc to allocate this buffer.
+You will need to write a function DrawImage which takes a top-left position and an image, then sets the tile colors starting from the initial position.
+You should draw 4 images on the screen every frame.
+Every time you press space you should regenerate the 4 images.
+You will need to write functions that generate an image. They should take in a pointer to the image, as well as all the pixels. You do not need to allocate the pixel data inside these functions, instead you should allocate them at their max size, and simply use the width/height to determine how much of that buffer is used. For example if your max size is 10x10, but you generate a 5x5 image, then you'll only be using 25 of the 100 colors inside that buffer.
+Grading rubric: %50 technical correctness, 50% creativity and interest of the generated images.
+I recommend trying lots of approaches to the image generation. Try a function that generates a color gradient, one that generates a mountain range, etc. 
+Video lectures: pointers1 and allocations
+
+Assignment 4
+
+For this assignment we'll create a particle emitter.
+A particle emitter is something which spawns particles and controls their parameters, along with removing them at their end of their lifetime. We'll just use tiles to represent our particles.
+A particle should have at least the following features:
+- position
+- velocity
+- start and end color
+- lifetime
+Every frame each particle is updated based on its parameters.
+The partcile emitter should have these features:
+Keep track of how many particles are currently active.
+Keep a pointer to where all the particles are stored in memory.
+Control how many particles are active at once.
+Control how many particles are spawned at once.
+Control the rate that particles spawn in.
+A lifetime for the entire emitter (meaning after N seconds it wouldn't spawn any new particles)
+Particles should be able to have a random lifetime when they're spawned.
+Particles should fade in and fade out their color.
+Particles emitter should specify random velocity for each particle that is spawned.
+Modifiable parameters for controlling the range of possible starting states for a particle (such as the min and max possible velocities)
+
+For example if you had a particle emitter with the following parameters:
+maxParticles = 100
+spawnRate = 0.1
+particlesPerSpawn = 10
+particleLifetime = 2.0
+It would spawn 10 particles at a time every 0.1 seconds, up until it reached 100 particles. Then it would take another second for the first 10 particles to die, at which point it would spawn in another 10 particles.
+You must have showcase different particle emitters getting created and destroyed. Your emitters should showcase a variety of different effects (smoke, fire, explosion, water splashing, etcetera).
+You must use a single memory buffer which is the maximum number of particles that can be rendered. This is really important for performance reasons in a real game. Particle emitters are created and destroyed all the time, so if each one has to allocate and deallocate memory that has serious performance implications. You won't necessarily share a single buffer between all particles in the real world, but you will take steps to make sure that you do as little deallocation/allocation as possible.
+
+Assignment 5
+
+In this assignment you'll create an arcade-style shooter using memory arenas. You shuold have a memory arena where you store all the memory for the lifetime of a "round" of the game (so think things like a projectile's velocity, the position of an enemy). When a round is over you'll simply clear the memory arena and allocate the memory when the next round starts. Instead of using fix sized arrays you'll need to allocate these buffers out of your memory arena.
+Your implementation of the game should be "correct", meaning that things like collision and input should respond as the player would expect. There are no other requiments for what mechanics you implement.
+Tips:
+
+    utilize techniques from other assignments (like AABB collision detection, structs)
+    use the "remove by swap" idea discussed in the particles video when deleting projectiles and other gameplay objects.
+
+
+Assignment 6
+In this assignment you'll create a simple open world composed of chunks. A chunk has a size, a position, and some buffer of data (could be colors, or entities). When your character moves you'll need to determine which chunks are visible and find which tiles on the screen should be drawn from that data.
+You can randomly generate each of your chunks.
+A chunk doesn't necessarily need to be as big as the screen, it could be smaller but it must be more than 1x1.
+Chunks should all be the same size.
+You can't render your world simply by drawing every tile in your chunks. That will have very bad performance when your world has many chunks. Instead you should be figuring out which chunks could be visible and which portions of them you need draw.
+All your chunks should be allocated and persistent in memory.
+You do not need to try rendering each chunk, you should only try to draw the chunks that can fit in the screen. For example if your screen is 9x9, and you chunks are each also 9x9, you know that you can't possibly fit all chunks on the right side.
+Tips:
+
+    Think about the world space coordinates of each of your chunks. So if you have a chunk that has a top left of (-9, 0) that means you can find the world space position of any of the tiles relative to that position. Actually try writing down these values.
+    Write down some concrete visualizations and numerical representations. It is very important to build a mental model of what you want, and sometimes the best way is to visualize things!
+    What you're doing is essentially converting world coordinates of the chunks into the local coordinates of the screen based on your character's position. Ask yourself: if you have a row of 3 9x9 chunks, and the player is standing in the center at coordinate (4, 4), which chunks should you be drawing? What if they were standing at position (7, 4)? Construct examples like that.
+    When you're debugging your program it may help to not randomly generate the chunks.
+
+
+Assignment 7
+In this assignment we will create a game in the sokoban genre. The sokoban genre is simple, and can be thought of as "turn-based, grid-based block pushing game." The player plays one or more characters. The characters are able to push one or more block. The goal of the game is to move the blocks into certain positions to beat the level. Some notable games in this genre: Stephen's Sausage Roll, Baba is You, and A Monster's Expedition. Some other less well-known games are Heroes of Sokoban, Mirror Isles, Skipping Stones, Enigmash. More can be found here.
+The game is turn-based meaning nothing happens when the player doesn't move, and everything in the game moves in discrete units (ie one square per move, not 0.1 units per frame).
+The player can move in 4 directions using the arrow keys or the WASD keys.
+Your level should have space to store the state for each of the type of entities in your game.
+You will need to implement both a restart and an undo key for the user. These should be on the R and Z keys respectively. Think about how you could implement undo: what data changes per frame and how could you restore that data? Hint: separate the "level data" from the "runtime data", so I recommend storing the start state of the level, and then having another struct which represents the current state of the various entities in your level. 
+You should create 4 levels for your game. The levels should progress from an introduction/tutorial to showcasing more ideas about the game. Please do not just make levels that feature more boxes and more pads because those are not interesting, they are just tedious. Instead take the mechanics of your game and design levels that highlight interesting things about it.
+
+  In part 2 we'll take this basic game and start making it into your own unique design. If you have an idea up front you can start to develop that here, but I don't expect it.
+  Some tips for developing interesting ideas for your game.
+  - Think of concepts that interest
+  - Think of interactions that could happen with the boxes (what if the boxes could break, what if they could push you?)
+  - Think of player abilities (teleportation, cloning, powerups)
+  - What are entities you could add that might create new interesting interactions between the entities you already have? 
+
+Tips:
+
+    Separate the initial state of your levels from the "runtime" state, so whenever you want to reset a level you can just use the initial state version, you don't have to undo the state of your current level.
+    Separate the rendering of your levels from the gameplay. You should have a function that loops over your state to render it and another function to loop over the state and update everything.
+    Make a separate struct and buffer for each type of object in your game.
+    Have a nice way to index things by position. So you should be able to say something like GetWallAtPosition(x, y). A good way to do this is have a struct that stores a position, the type of entity stored there, and the index of that entity in its respective buffer.
+        struct Slot {
+           vec2i position;
+           ObjectType type;
+           int32 index;
+        };
+        
+        
+Assignment 8
+ 
+We'll take your sokoban game from assignment 7 and add the ability to read files from disk which define your levels. What you're doing is taking a file on disk and converting it into the level format your game uses.
+Your file format will consist of single characters representing an entity type (we call this a legend). The first row defines how many columns there are per row. For example let's say your legend was:
+Player: @
+Block: B
+Goal: $
+Ground: .
+Wall: #
+A level would look like:
+#####
+#.@.#
+#.B.#
+#.$.#
+#####
+
+You will read in a file which contains all the levels for your game. I strongly recommend tokenizing the file first, and then parsing the tokens, it'll be much easier to make decisions about how to convert into data.
+
+When reading the file you should report an error if any of your rows have differing numbers of columns or if you're using an invalid symbol.
+For bonus points you can expand the concept of your game to include more levels and interesting ideas.
+
+
+ 
+ Misc Assignments
+ In this assignment you can create any game you want. Here are some suggestions:
+
+    Tetris
+        Use arrays and memory arenas
+        Animate when a line is cleared
+        Make the game snappy and feel good to play.
+        Scoring mechanics
+        Maybe try creating variations on the rules
+    Roguelike RPG (think Dungeon Crawl Stonesoup, Rogue, Nethack)
+        Randomly generate levels
+        Turn-based and discrete movement
+        Use text to create a UI
+    Text adventure (create a custom file format where you can write your script and load into the game)
+        Could focus on dialogue trees
+        You can use a struct to represent a "node" in the game which might have a line of dialogue or a choice that you can make. The nodes can also say what nodes to travel to.
+        Look into tokenization and parsing
+    Animation
+        Define a struct that represents a keyframe. A keyframe should have all the data necessary to define the visuals of a tile at a given point in time. It should also specify how long the keyframe lasts. An animation is simply interpolating between two keyframes. More complex animations can be created by stringing together longer sequences of keyframes.
+
+
+ 

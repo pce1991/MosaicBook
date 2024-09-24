@@ -24,6 +24,8 @@ Note that this just the definition of a function, the code inside will not actua
 Also be aware that like with variables the name has no semantic meaning. We colud call this function anything we wanted: Foo, DoNotColor3Tiles, CreateFullVideoGame.
 Just like variables we must declare functions before we are able to use them. Once we have defined this function before our MyMosaicUpdate(), we can call it.
 
+You want to make sure that you define your function before you call it. You must define it at the top-most scope. 
+
 ```
 void MyMosaicUpdate() {
  MyFunction();
@@ -52,7 +54,7 @@ void MyMosaicUpdate() {
 }
 ```
 
-
+Your functions will have access to all your "global variables" (those defined outside any scope) as long as the definition comes before the definition of the function. 
 
 When we call this function our program will look at the arguments, and it'll create a variable within the scope of the function, and copy the value 4 into the variable x. Now we can use that value to compute which 3 tiles we want to color.
 Note that the variable only exists within the scope of our function. Therefore if we had another variable called x, that our function DrawThree is talking about a different variable; we are not copying the value 4 into the x declared within MyMosaicUpdate().

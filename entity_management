@@ -1,0 +1,155 @@
+Here are some helpful references:
+
+Molecular Matters blog on references
+
+
+Bitsquid handles
+
+
+
+
+
+We want
+  - a dedicated space to store entities of a certain type. 
+  - a way to stably reference these entities (stable meaning that the reference still holds if its moved in memory)
+
+  - need to know if the reference we have has been deleted.
+  - spawn at run time. 
+  - delete at run time.
+
+So let's think about references. The most obvious way to reference an entity is to just get a pointer to the data. But then what if we delete that entity? Now our pointer is going towards some invalid data. That thing no longer "exists" even tho the memory is still there. One option would be to check every time we use it if it's deleted or not (maybe we have a flag that marks it as deleted). That can be very clunky tho. The other option is to mark the pointer as null when it gets deleted, but that means if A has a pointer to B, B also needs a pointer to A so we know where to "point back" to clean up our references. This gets completely out of hand pretty quickly.
+
+  So first of all let's make something that gives us 3/4.
+
+enum EntityType {
+    // ...
+    EntityType_Count;
+};
+
+struct EntityTypeBuffer {
+    int32 count;
+    int32 entitySize;
+    int32 capacity;
+    void *entities;
+};
+
+struct EntityManager {
+   EntityTypeBuffer buffers[EntityType_Count];
+};
+
+Alternatively you could just have the EntityMananger store explicit arrays for each of the types
+
+struct EntityManager {
+
+    DynamicArray<Entity> plainEntities;
+
+    DynamicArray<Projectile> projectiles;
+
+   DynamicArray<Player> players;
+
+  .... and so on
+
+};
+
+
+
+
+We need to intitalize our buffers for each entity type now. 
+
+void GetEntity(type index) {
+// look up the buffer using type then use the index into data 
+}
+
+int32 AddEntity(EntityType type, void *data) {
+     // Look up the buffer in type
+     // count tells us where in the buffer we should add our data
+     // copy data into buffer
+     // increment count
+     // return index to our data in the buffer
+}
+
+Now to delete an entity we need to know the index of where it's stored
+
+void DeleteEntity(EntityType type, int32 index) {
+     // use index and type to look up entity in buffer
+     // Now we can swap the last entity in buffer with the
+     // thing that we're deleting. 
+     // Otherwise we'd have to mark the entity in some way
+     // and iterate over the entire buffer, checking each one
+     // to see if it's deleted or not. 
+}
+
+There's a couple annoying things about this implementation. For one we have no stable way to reference entities. If we have an index of 5, and we delete it by swapping, how do we know that the thing at 5 is now different? How do we know the entity at the end is now no longer there? 
+
+  Adding a layer of indirection can be a good strategy for achieving this goal of stable referencing. 
+
+  Instead of using a pointer we use a "handle." 
+
+struct EntityHandle { 
+  int32 id;
+  int32 generation;
+
+  EntityType type;
+}
+
+So instead of directly using an index or a pointer we'll use the handle to look up information in a stable buffer (meaning that it's memory is never rearranged). 
+
+struct EntityInfo {
+    // the id number is implicit, it's just the index into array
+    EntityType type;
+    int32 generation;
+    int32 indexInBuffer; 
+};
+
+struct EntityManager {
+
+     int32 count;
+
+     int32 capacity;
+
+     EntityInfo *entities;
+
+}
+
+Now we use the handle ID to look up our entityInfo. That entityInfo tells us which buffer and which index to look up our data. 
+
+EntityHandle AddEntity() {
+    // ...
+
+    // See if the freelist has anything in it, if so remove the last item (this is known as a PopBack) then we can reuse that ID. Otherwise add to the entity info.
+    // Now we must add an entityInfo and set it up
+}
+
+void *GetEntity(EntityHandle handle) {
+   // use the ID to look up the entity info, then use the info
+   // to look up our buffer and data
+}
+
+Now when we delete we simply need to change the index of the thing we're swapping in; it's ID doesn't change. 
+
+The last thing we need to address for stability is the generation. So we have our swapped entity and our reference is still stable, but what about our old reference to the thing we deleted? We want to know that that isn't valid anymore. We use the generation for this. Think of it like "how many times have I used this information". When you delete something we increment the generation for that info, so now when we look up an entity handle we want to make sure the handle's generation matches the info's. 
+
+When we delete an entity now we want to increase the generation so we invalidate all handles to it, and we want to add the id to the freelist so we can keep track of which entities to use.
+
+Tips: look up void* and how to cast to a particular type.
+
+Look up how to use malloc and how to get the size in bytes of a type.
+
+
+
+
+Example of the entity info array as we add things:
+
+{ }
+
+AddEntity()
+
+newInfo = { entityCount, generation = 1, type}
+
+entities[entityCount] = newInfo;
+
+handle.id = entityCount; handle.generation = newInfo.generation;
+
+entityCount++;
+
+{ [0 1 type] }

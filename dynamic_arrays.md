@@ -20,7 +20,7 @@ One way that a DynamicArray is different from an array is that semantically ther
 myArray[0] = 1001;
 ```
 
-our program would crash because the count of the array is still 0. So how do we get things into the array? With the PushBack function
+we would technically be accessing outside the bounds of the used portion of array. So how do we get things into the array? With the PushBack function
 
 ```
 // PushBack(<pointer to array>, <element to insert>);
@@ -28,7 +28,7 @@ PushBack(&myArray, 1001);
 Print("Count %d", myArray.count);
 ```
 
-Our count is now 1 and so we can access the first element using the array operator.
+Our count is now 1 and so we can access the first element using the array operator. PushBack will guarantee that the array expands in size if we're trying to add an element beyond our current capacity. This is why you don't want to manipulate the count of the array directly. 
 
 ```
 myArray[0] = 2;

@@ -1,0 +1,109 @@
+
+MemoryArena arena = {};
+struct Spot {
+    vec4 color;
+};
+int32 spotCount = 0;
+int32 spotCapacity = 0;
+Spot *spots = NULL;
+int32 spotWidth = 0;
+int32 spotHeight = 0;
+enum SpotTokenType {
+                SpotTokenType_Red,
+                SpotTokenType_Blue,
+                SpotTokenType_EndOfLine,
+};
+struct Token {
+    SpotTokenType type;
+    char c;
+};
+void MyMosaicInit() {
+    SetMosaicGridSize(16, 16);
+    AllocateMemoryArena(&arena, Megabytes(1));
+    ChunkedArray<Token> tokens = MakeChunkedArray<Token>(&arena, 256);
+    
+    FileHandle file;
+    if (OpenFileForRead("data/file_reading_example.txt", &file)) {
+        char c = ReadChar(&file);
+        // Tokenization
+        while(c != EOF) {
+            Token t = {};
+            if (c == '*') {
+                t.type = SpotTokenType_Blue;
+            }
+            if (c == '@') {
+                t.type = SpotTokenType_Red;
+            }
+            if (c == 10) {
+                t.type = SpotTokenType_EndOfLine;
+            }
+            t.c = c;
+            if (c != 13) {
+                PushBack(&tokens, t);
+            }
+            
+            //Print("%c %d", c, c);
+            c = ReadChar(&file);
+        }
+        CloseFile(&file);
+    }
+    // First lets loop to see how long our rows are
+    int32 columnCount = 0;
+    int32 rowCount = 0;
+    int32 expectedColumnCount = 0;
+    bool error = false;
+    
+    for (int i = 0; i < tokens.count; i++) {
+        Token t = tokens[i];
+        if (t.type == SpotTokenType_EndOfLine) {
+            if (expectedColumnCount == 0) {
+                expectedColumnCount = columnCount;
+            }
+            else if (columnCount != expectedColumnCount) {
+                Print("ERROR WHEN PARSING, row %d does not match expected colmun count of %d with %d", rowCount, expectedColumnCount, columnCount);
+                error = true;
+            }
+            
+            rowCount++;
+            columnCount = 0;
+        }
+        else {
+            columnCount++;
+        }
+    }
+    assert(!error);
+    spotWidth = expectedColumnCount;
+    spotHeight = rowCount;
+    
+    spotCapacity = columnCount * rowCount;
+    spots = PushSize(&arena, Spot, spotCount);
+    
+    for (int i = 0; i < tokens.count; i++) {
+        Token t = tokens[i];
+        
+        if (t.type == SpotTokenType_EndOfLine) {
+            continue;
+        }
+        if (t.type == SpotTokenType_Red) {
+            spots[spotCount].color = V4(0.7f, 0.3f, 0.3f, 1.0f);
+        }
+        if (t.type == SpotTokenType_Blue) {
+            spots[spotCount].color = V4(0.1f, 0.1f, 0.6f, 1.0f);
+        }
+        spotCount++;
+    }
+    
+}
+void MyMosaicUpdate() {
+    ClearTiles(0, 0, 0);
+    int32 spotIndex = 0;
+    for (int y = 0; y < spotHeight; y++) {
+        for (int x = 0; x < spotWidth; x++) {
+            Spot spot = spots[spotIndex];
+            
+            SetTileColor(x, y, spot.color.r, spot.color.g, spot.color.b);
+            
+            spotIndex++;
+        }
+    }
+}

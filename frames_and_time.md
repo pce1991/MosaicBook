@@ -113,8 +113,7 @@ Note that our tiles are always at integer positions (0, 0), (1, 0), (2, 0) and s
 
 If you haven't tried changing the position yet, please do so. If you have then read on.
 
-
-You see that when we change the position we still see a colored tile where we were previously. This is because we're never changing the color of the tile back. This is something we want to do so often in graphics programming we have a function for it: ClearTiles() which takes 3 color channel values and sets all the tiles to that color. We do this at the beginning of every frame so that we start from a clean slate. This may seem unnecessary now (why not just change the color back when I realize I've moved to a new tile), but as the state of our program becomes more complex it is much simpler (and even faster computationally) to just wipe the screen and draw everything again.
+Notice that our tile now appears at the new position. This is because every frame we're clearing all the tiles to black. We do this because it's simpler and more efficient to just wipe the screen and redraw everything each frame, even if it's state hasn't actually changed, than it is to keep track of which pixels need to be updated and which ones should stay the same. We want to do so often in graphics programming we have a function for it: ClearTiles() which takes 3 color channel values and sets all the tiles to that color. We do this at the beginning of every frame so that we start from a clean slate.
 
 
 ```
