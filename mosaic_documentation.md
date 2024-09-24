@@ -47,6 +47,21 @@ Example:
 SetTileColor(0, 0, 0.5f, 0.1f, 0.2f);
 ```
 
+### SetBlockColor()
+```
+void SetBlockColor(int32 x, int32 y, int32 width, int32 height, vec4 color);
+void SetBlockColor(vec2 pos, int32 width, int32 height, vec4 color);
+void SetBlockColor(vec2i pos, int32 width, int32 height, vec4 color);
+```
+
+Sets the tiles starting at the x & y coordinate and moving to the right by width and down by height. 
+
+Example:
+```
+// sets a 5 x 3 block starting at position (0, 0)
+SetTileColor(0, 0, 5, 3, 0.5f, 0.1f, 0.2f);
+```
+
 ### int32 GetMouseX()
 Returns the x coordinate of the tile the mouse is hovered over. If the mouse is off the grid returns -1.
 
