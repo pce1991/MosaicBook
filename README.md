@@ -54,7 +54,7 @@
 
 [Dynamic Arrays](https://github.com/pce1991/MosaicBook/blob/main/dynamic_arrays.md)
 
-[Natvis files in Visual Studio](https://github.com/pce1991/MosaicBook/blob/main/natvis_files.md)
+[Natvis files in Visual Studio](https://github.com/pce1991/MosaicBook/blob/main/natvis_file.md)
 
 [Parsing Files](https://github.com/pce1991/MosaicBook/blob/main/parsing_and_tokenization.md)
 
