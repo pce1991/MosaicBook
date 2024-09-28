@@ -33,7 +33,7 @@ Print("The value of x is %f and n is %d", x, n);
 ```
 
 
-We can use DrawTextTile to start drawing a line of text starting at the position of one of our tiles.
+We can use DrawTextTile to start drawing a line of text starting at the position of one of our tiles. You give it a position, a size, a color, and the text to print. 
 
 The position will always clamp to the bottom left corner of whatever tile
 the position is inside.
