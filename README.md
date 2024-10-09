@@ -64,3 +64,4 @@
 
 [Bitfields and Flags](https://github.com/pce1991/MosaicBook/blob/main/bitfields_and_flags.md)
 
+[Entity Manager Example](https://github.com/pce1991/MosaicBook/blob/main/entity_manager_example.md)
