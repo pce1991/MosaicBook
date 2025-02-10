@@ -59,8 +59,9 @@
 [Parsing Files](https://github.com/pce1991/MosaicBook/blob/main/parsing_and_tokenization.md)
 
 ### Advanced
-
 [Free List](https://github.com/pce1991/MosaicBook/blob/main/freelist.md)
+
+[Handles](https://github.com/pce1991/MosaicBook/blob/main/handles.md)
 
 [Bitfields and Flags](https://github.com/pce1991/MosaicBook/blob/main/bitfields_and_flags.md)
 
