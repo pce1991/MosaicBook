@@ -38,13 +38,13 @@
 
 [Functions 2](https://github.com/pce1991/MosaicBook/blob/main/functions_2.md)
 
-### Game Fundamentals
+## Game Fundamentals
 
 [Axis Aligned Bounding Boxes](https://github.com/pce1991/MosaicBook/blob/main/axis_aligned_bounding_boxes.md)
 
 [Raycasts](https://github.com/pce1991/MosaicBook/blob/main/raycasts.md)
 
-### Memory
+## Memory
 
 [Pointers](https://github.com/pce1991/MosaicBook/blob/main/pointers.md)
 
@@ -58,7 +58,7 @@
 
 [Parsing Files](https://github.com/pce1991/MosaicBook/blob/main/parsing_and_tokenization.md)
 
-### Advanced
+## Advanced
 [Free List](https://github.com/pce1991/MosaicBook/blob/main/freelist.md)
 
 [Handles](https://github.com/pce1991/MosaicBook/blob/main/handles.md)
