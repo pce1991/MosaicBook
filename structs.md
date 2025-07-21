@@ -97,3 +97,18 @@ void MyMosaicUpdate() {
     SetTileColor(ball.position, 0.3f, 0.8f, 0.7f);    
 }
 ```
+
+With structs you can start to group your loose collection of variables into types. And since you can nest those types you can start to group your entire game state into a collection. At first this may seem like just more indirection, but as projects grow in complexity it can be very helpful.
+
+```
+struct GameMem {
+   MyGuy guy;
+   Ball balls[16];
+   int32 score;
+   //... and so on
+};
+
+// now you have just one global variable called Game and can access everything from it.
+GameMem Game = {};
+}
+```
