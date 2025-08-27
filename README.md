@@ -56,12 +56,12 @@
 
 [Natvis files in Visual Studio](https://github.com/pce1991/MosaicBook/blob/main/natvis_file.md)
 
-[Parsing Files](https://github.com/pce1991/MosaicBook/blob/main/parsing_and_tokenization.md)
-
 ## Advanced
 [Free List](https://github.com/pce1991/MosaicBook/blob/main/freelist.md)
 
 [Handles](https://github.com/pce1991/MosaicBook/blob/main/handles.md)
+
+[Parsing Files](https://github.com/pce1991/MosaicBook/blob/main/parsing_and_tokenization.md)
 
 [Bitfields and Flags](https://github.com/pce1991/MosaicBook/blob/main/bitfields_and_flags.md)
 
