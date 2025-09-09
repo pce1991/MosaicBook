@@ -40,7 +40,7 @@
 
 ## Game Fundamentals
 
-[Random Values]()
+[Random Values](https://github.com/pce1991/MosaicBook/blob/main/random_values.md)
 
 [Axis Aligned Bounding Boxes](https://github.com/pce1991/MosaicBook/blob/main/axis_aligned_bounding_boxes.md)
 
