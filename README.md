@@ -40,6 +40,8 @@
 
 ### Game Fundamentals
 
+[Random Values]()
+
 [Axis Aligned Bounding Boxes](https://github.com/pce1991/MosaicBook/blob/main/axis_aligned_bounding_boxes.md)
 
 [Raycasts](https://github.com/pce1991/MosaicBook/blob/main/raycasts.md)
