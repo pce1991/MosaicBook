@@ -14,15 +14,15 @@
 
 [Variables and Values](https://github.com/pce1991/MosaicBook/blob/main/variables_and_values.md)
 
+[Common Problems for Beginners](https://github.com/pce1991/MosaicBook/blob/main/common_errors.md)
+
+[Compiler Errors](https://github.com/pce1991/MosaicBook/blob/main/compiler_errors.md)
+
 [Frames and Time](https://github.com/pce1991/MosaicBook/blob/main/frames_and_time.md)
 
 [Conditionals](https://github.com/pce1991/MosaicBook/blob/main/conditionals.md)
 
 [Printing](https://github.com/pce1991/MosaicBook/blob/main/printing.md)
-
-[Common Problems for Beginners](https://github.com/pce1991/MosaicBook/blob/main/common_errors.md)
-
-[Compiler Errors](https://github.com/pce1991/MosaicBook/blob/main/compiler_errors.md)
 
 [Functions 1](https://github.com/pce1991/MosaicBook/blob/main/functions_1.md)
 
@@ -38,7 +38,7 @@
 
 [Functions 2](https://github.com/pce1991/MosaicBook/blob/main/functions_2.md)
 
-### Game Fundamentals
+## Game Fundamentals
 
 [Random Values]()
 
@@ -46,7 +46,7 @@
 
 [Raycasts](https://github.com/pce1991/MosaicBook/blob/main/raycasts.md)
 
-### Memory
+## Memory
 
 [Pointers](https://github.com/pce1991/MosaicBook/blob/main/pointers.md)
 
@@ -58,11 +58,12 @@
 
 [Natvis files in Visual Studio](https://github.com/pce1991/MosaicBook/blob/main/natvis_file.md)
 
-[Parsing Files](https://github.com/pce1991/MosaicBook/blob/main/parsing_and_tokenization.md)
-
-### Advanced
-
+## Advanced
 [Free List](https://github.com/pce1991/MosaicBook/blob/main/freelist.md)
+
+[Handles](https://github.com/pce1991/MosaicBook/blob/main/handles.md)
+
+[Parsing Files](https://github.com/pce1991/MosaicBook/blob/main/parsing_and_tokenization.md)
 
 [Bitfields and Flags](https://github.com/pce1991/MosaicBook/blob/main/bitfields_and_flags.md)
 

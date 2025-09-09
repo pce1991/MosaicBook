@@ -97,3 +97,52 @@ void MyMosaicUpdate() {
     SetTileColor(ball.position, 0.3f, 0.8f, 0.7f);    
 }
 ```
+
+With structs you can start to group your loose collection of variables into types. And since you can nest those types you can start to group your entire game state into a collection. At first this may seem like just more indirection, but as projects grow in complexity it can be very helpful.
+
+```
+struct GameMem {
+   MyGuy guy;
+   Ball balls[16];
+   int32 score;
+   //... and so on
+};
+
+// now you have just one global variable called Game and can access everything from it.
+GameMem Game = {};
+}
+```
+
+One organization I like is to group together inputs into one struct. That way I can just look up input any place in the code without having to call functions, which you can imagine gets very annoying if you have multiple things to check, like if you're supporting gamepads and keyboards. 
+
+```
+struct PlayerInput {
+   bool jumpPressed;
+   vec2 moveDirection;
+};
+// this can just get stored in GameMem
+
+void UpdateInput() {
+   Game.input.jumpPressed = InputPressed(Keyboard, Input_Space) || InputPressed(Gamepad, Input_A);
+   if (InputHeld(Keyboard, Input_LeftArrow)) {
+      Game.input.moveDirection.x = -1;
+   }
+   if (InputHeld(Keyboard, Input_RightArrow)) {
+      Game.input.moveDirection.x = 1;
+   }
+   if (InputHeld(Keyboard, Input_UpArrow)) {
+      Game.input.moveDirection.y = 1;
+   }
+   if (InputHeld(Keyboard, Input_DownArrow)) {
+      Game.input.moveDirection.y = -1;
+   }
+
+   float32 gamepadX = InputAnalogue(Gamepad, Input_LeftStickX);
+   float32 gamepadY = InputAnalogue(Gamepad, Input_LeftStickY);
+   if (gamepadX != 0 || gamepadY != 0) {
+      Game.input.moveDirection.x = gamepadX;
+      Game.input.moveDirection.y = gamepadY;
+   }
+}
+```
+

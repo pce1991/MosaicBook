@@ -32,8 +32,9 @@ if (InputPressed(Input, Input_RightArrow)) {
    minB.x += 1;
 }
 
-// the & operator gets the memory address of the variable whichis what
-// we need to pass to the TestAABBAABB function. 
+// the & operator gets the memory address of the variable which is what
+// we need to pass to the TestAABBAABB function. This lets the function
+// write out the result of the overlap into outDir if there was one. 
 vec2 outDir = {};
 if (TestAABBAABB(minA, maxA, minB, maxB, &outDir)) {
   SetBlockColor(minA, 4, 4, V4(1, 0, 0, 1));
