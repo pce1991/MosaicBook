@@ -115,4 +115,6 @@ void RemoveCoin(CoinHandle handle) {
 
 Now when we update our enemy we just need them to dereference their handle. If they get a valid coin then we know it still exists and can follow it. If it doesn't, then that means it's been deleted and we need to pick a new coin. 
 
+Keep in mind that if we wanted to have our coinArray be tightly packed instead of using a free list, then we'd want our `CoinInfo` to also keep track of our index in the `coins` array because as things are deleted our index might change. 
+
 There's a more formal structure for this type of pattern where we treat all our entities this way, sometimes called an `EntityManager`. We'll look at that next. 
