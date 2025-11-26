@@ -1,0 +1,8 @@
+* misc
+* incremental steps
+* Pausing
+Show how you can write your code to pause and only update when a key is pressed. Can be done by separating out rendering and passing in your own `dt` value.
+
+* enum typed structs and tagged unions
+@TODO: post a thing about tagged-unions
+
