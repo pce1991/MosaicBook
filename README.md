@@ -61,6 +61,8 @@
 ## Advanced
 [Free List](https://github.com/pce1991/MosaicBook/blob/main/freelist.md)
 
+[Hash Tables](https://github.com/pce1991/MosaicBook/blob/main/hash_tables.md)
+
 [Handles](https://github.com/pce1991/MosaicBook/blob/main/handles.md)
 
 [Parsing Files](https://github.com/pce1991/MosaicBook/blob/main/parsing_and_tokenization.md)
