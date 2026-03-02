@@ -29,7 +29,7 @@ Sprite mySprite;
 // the path is always relative to the top-level directory of mosaic.
 // I would recommend storing all of your assets in data/
 void MyGameInit() {
-  LoadSprite(&mySprite, "data/textures/galaga_ship.png");
+  LoadSprite("data/textures/galaga_ship.png", &mySprite);
 }
 
 void MyGameUpdate() {
