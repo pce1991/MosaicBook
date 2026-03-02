@@ -59,6 +59,9 @@
 [Natvis files in Visual Studio](https://github.com/pce1991/MosaicBook/blob/main/natvis_file.md)
 
 ## Advanced
+
+[Outer Mosaic](https://github.com/pce1991/MosaicBook/blob/main/outside_mosaic.md)
+
 [Free List](https://github.com/pce1991/MosaicBook/blob/main/freelist.md)
 
 [Hash Tables](https://github.com/pce1991/MosaicBook/blob/main/hash_tables.md)
