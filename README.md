@@ -58,6 +58,8 @@
 
 [Natvis files in Visual Studio](https://github.com/pce1991/MosaicBook/blob/main/natvis_file.md)
 
+[Writing Files](https://github.com/pce1991/MosaicBook/blob/main/file_writing.md)
+
 ## Advanced
 
 [Outer Mosaic](https://github.com/pce1991/MosaicBook/blob/main/outside_mosaic.md)
