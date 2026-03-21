@@ -1,0 +1,34 @@
+input-files:
+  - pandoc/metadata.yml
+  - mosaic_intro.md
+  - variables_and_values.md
+  - common_errors.md
+  - compiler_errors.md
+  - frames_and_time.md
+
+output-file: output.pdf
+standalone: true
+toc: true
+number-sections: true
+
+# Use the Typst engine
+pdf-engine: typst
+
+metadata:
+  header-includes: |
+    #set page(
+      paper: "a4",
+      margin: 1in,
+      numbering: "1",
+    )
+
+    #set heading(numbering: "1.1")
+
+    #show heading.where(level: 1): it => {
+      pagebreak(weak: true)
+      v(4em)
+      text(20pt, weight: "bold")[Chapter #counter(heading).display()]
+      v(1em)
+      text(32pt, weight: "bold")[#it.body]
+      v(2em)
+    }

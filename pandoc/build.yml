@@ -1,0 +1,20 @@
+input-files:
+  - pandoc/metadata.yml
+  - mosaic_intro.md
+  - variables_and_values.md
+  - common_errors.md
+  - compiler_errors.md
+  - frames_and_time.md
+
+output-file: output.html
+standalone: true
+# You can add more settings here easily:
+# toc: true
+# self-contained: true
+
+toc: true                      # Adds a Table of Contents
+number-sections: true          # Numbers your chapters (1, 2, 3...)
+
+# Sophisticated Chapter Handling:
+top-level-division: chapter    # Tells Pandoc to treat top headers as chapters
+shift-heading-level-by: 0      # Adjusts header levels if your .md files start with ## instead of #

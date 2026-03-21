@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Collin Eye" />
+  <title>MOSAIC</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      font-family: Arial;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Consolas;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">MOSAIC</h1>
+<p class="author">Collin Eye</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Contents</h2>
+
+</nav>
+<p>We’ll be writing our programs in the Mosaic game engine. The defining
+feature of Mosaic is an N by M grid of “tiles”, which are squares that
+can be set to any color.</p>
+<p>The first thing to do is make sure that you download the Mosaic
+engine and unzip it. You’ll see a few folders, and the one you want to
+look for is titled “src.” In it you’ll see a file called
+“my_mosaic.cpp”, so go ahead and open that in your text editor (such as
+Visual Studio).</p>
+<p>There are two functions which define a game or program in Mosaic:
+MyMosaicInit() and MyMosaicUpdate().</p>
+<p>MyMosaicInit() runs one time when the program is launched. This is
+where you can initialize your data (for example what position does the
+player start at).</p>
+<p>MyMosaicUpdate() is a function which runs once per frame.</p>
+<p>So think of MyMosaicUpdate as a set of instructions that the computer
+executes repeatedly. This is where we write the majority of our code: we
+tell it what to draw and how to update the state of our data.</p>
+<p>To manipulate the color of the tiles in Mosaic we use the
+SetTileColor() function which takes an x and y coordinate, along with 3
+color values between 0 and 1. In computer graphics we represent colors
+using 4 channels: red, green, blue, and alpha/transparency. Our screen
+hardware is built out of pixels, which are 3 lights bulbs (red, green,
+and blue). The way we create colors is by setting the intensity of each
+of those bulbs. If the intensity is 0 that means the bulb emits no
+light, and if it’s 1 it emits at full intensity.</p>
+<p>Let’s look at some code. Navigate to the file in the “examples”
+directory called “mosaic_basic.cpp” You can delete everything in there
+and replace it with this.</p>
+<pre><code>void MyMosaicInit() { 
+}
+
+void MyMosaicUpdate() { 
+  SetTileColor(4, 4, 1.0, 0.0, 0.0); 
+}</code></pre>
+<p>One of the best ways to learn programming is to experiment and play
+around with whatever tool you’re using. So I recommend you try calling
+SetTileColor with different parameters. Try setting the color of each
+corner. Try creating different colors and developing an intuition for
+how the channels combine (how do you make purple? how do you make
+orange?).</p>
+<p>Here are some other functions we have access to. You can call these
+inside MyMosaicInit() to setup your grid how you like.</p>
+<p>This sets the dimensions of the grid by supplying a width and a
+height. The max width is 255 and the max height is 255</p>
+<p>SetMosaicGridSize(16, 16);</p>
+<p>This specifies if you want to see the grid lines. Often grid lines
+can be helpful for visualizing where things are, and may be desired if
+doing something like a tactics or puzzle game. There is an analogous
+HideGrid() function.</p>
+<p><code>ShowGrid();</code></p>
+<p>This specifies the colors of the grid lines. Supply values for the 3
+color channels.</p>
+<p><code>SetGridColor(0.5f, 0.5f, 0.5f);</code></p>
+<p>This specifies the background color of the screen. Supply values for
+the 3 color channels.
+<code>SetMosaicScreenColor(0.2f, 0.2f, 0.2f);</code></p>
+<p>Fundamentally all visual software is simply setting the colors for
+each pixel on the screen. The complexity lies in how you determine which
+pixels and how to color them. So for example it is simple to take an
+image and display it: you simply take each of the pixels of the image
+and set the corresponding color on the monitor. It is more complicated
+to render a 3D dimensional scene: imagine you have a triangle floating
+in space. As you move around the scene the perspective on that triangle
+will change, so you need to find a way to map a position on the triangle
+in 3D space onto a pixel on the screen. That is beyond our knowledge
+right now, but it is the same basic process of setting the colors of
+pixels.</p>
+<p>I said in the beginning that a program is something that transforms
+data. In the previous section we learned some ways to transform data,
+namely the data of tiles. This transformation evolved a couple of pieces
+of data: the x and y coordinates of the tile we wanted to change, and
+the red, green, and blue color values we wanted to use for that tile. In
+those examples we supplied the data itself.</p>
+<p>Very often we want to store a piece of data and give it a name; then
+we can use that name to refer to that piece of data. We call that name a
+“variable”.</p>
+<p>To create a variable we declare it. Declaring a variable means we
+tell the compiler “give me some memory to store this data, and anytime I
+use this name, I’m talking about the data stored there.”</p>
+<p>The syntax of a variable declaration looks like this:</p>
+<pre><code>&lt;type&gt; &lt;name&gt;;</code></pre>
+<p>A variable declaration is a statement, just like our function calls
+from last time, so it needs to end with a semicolon. It’s important to
+realize that this is a command, it is telling the computer to do some
+physical work. A variable can have any name that you want, as long as it
+does not begin with number, and has only alpha numeric characters,
+except for the underscore.</p>
+<p>x, Foo, bigDog, anything_you_want, are all valid variable names. You
+do want to make sure your variable names are sensible, and tell the user
+(in this case, you) what data they are storing. But be aware there is no
+semantic meaning to the variable names. If you call a variable “health”
+your program doesn’t know if you’re actually using that as health, a
+color, or the character’s name.</p>
+<p>Let’s make our first variable then:</p>
+<pre><code>void MyMosaicUpdate() {
+  int32 x;
+}</code></pre>
+<p>That compiles, but it doesn’t do anything interesting because we
+aren’t ever using that variable; we aren’t even telling it what data to
+store!</p>
+<p>So what is this “int32” business? Well looking at our syntax example
+we can see it is the type?, but what is a type? A type determines two
+important things: how much data there is, and how to interpret and use
+that data. Unlike the name the type cannot be anything you want; it has
+a strict definition. For now we’re using only “built-in” types, but we
+will learn how to define our own in the chapter on Structs.</p>
+<p>So what is data then? Data is a sequence of bits, which represent two
+possible values: 0 or 1. A bit is smallest possible amount of
+information we could represent. So to rephrase our definition: data is a
+sequence of 0s and 1s.</p>
+<p>The type of the data then determines how many 0s and 1s there are in
+the sequence, and how to interpret them.</p>
+<p>As you may be able to guess from the name, the type int is short for
+“integer” (a positive or negative number), and the number tells us how
+many bits something of this type is (32).</p>
+<p>Let’s look at how to assign data to a variable:</p>
+<pre><code>void MyMosaicUpdate() {
+  int32 x;
+  x = 4;
+  SetTileColor(x, 4, 1, 1, 1);
+}</code></pre>
+<p>This is another statement which says “goto the place in memory where
+x is and copy the value 4 into that location in memory.” When we type
+the name of the variable as an argument to SetTileColor we’re saying
+“goto the memory address and give me the value stored there.”</p>
+<p>We call this operation <em>assignment</em>.</p>
+<p>You can combine declaration and assignment into a single line:</p>
+<pre><code>void MyMosaicUpdate() {
+  int32 x = 4;
+  SetTileColor(x, 4, 1, 1, 1);
+}</code></pre>
+<p>This is pretty common because we usually know what value we want our
+data to start at.</p>
+<p>Let’s now talk about computer <em>memory</em>. Memory is a piece of
+hardware that can store bits by hodling onto an electric charge. The
+simplest piece of memory would maintain charge if you told it “remember
+this bit is 1”, and would hold no charge if that bit was 0.</p>
+<p>Instead of addressing individual bits in memory, we address them in
+8-bit chunks; an 8-bit sequence of bits is called a <em>byte</em>. That
+means that our int32 is 4 bytes. So when we create an int32 variable we
+are telling the computer that we want 4 bytes. When we copy the value 4
+into that spot we are telling it to copy over some binary data into 4
+bytes.</p>
+<p>When making games we’re rarely concerned with the binary
+representation of our data, but it is important to have a conceputal
+understanding of appreciation for what we are actually telling the
+computer to do when we create variables. If games are transforming data,
+then how that data is represented and transformed is important to
+understand.</p>
+<p>Now that we have a variable we can begin to manipulate that data
+using <em>expressions</em>.</p>
+<p>An expression is a series of <em>operations</em> (such as addition,
+multiplication) performed on data that produces a single value when it
+is <em>evaluated</em>. When we assign a variable to an expression, we
+are really assigning the variable that value of that expression when
+evaluated. That means when we type:</p>
+<pre><code>int32 x = 2 + 2;</code></pre>
+<p>First we are getting space in memory for our variable; then we are
+evaluating 2 + 2; then we are copying the value 4 into our location in
+memory.</p>
+<p>The whole point of having a variable is so we store some data some
+where that we can transform.</p>
+<pre><code>void MyMosaicUpdate() {
+  int32 x = 4;
+  SetTileColor(x, 4, 1, 1, 1);
+  x = x + 1;
+  SetTileColor(x, 4, 1, 1, 1);
+}</code></pre>
+<p>This may seem strange, and even non-sensical “we’re defining x using
+x”, but remember that when we use a variable what we’re really using is
+the value that variable refers to; so when we say:</p>
+<pre><code>x = x + 1;</code></pre>
+<p>what we’re doing is: take the value of x and add 1 to it; take the
+result of that expression and copy in into the place where x is stored.
+This changes the value that was stored at x to 1 greater than it
+was.</p>
+<p>This is such a common operation we have a shorter way to write
+it:</p>
+<pre><code>x += 2; // this is shorthand for x = x + 2;
+x++; // x++ ---&gt; x += 1 ---&gt; x = x + 1;</code></pre>
+<p>You may be wondering “what is modulo?” Modulos gives you the
+remainder of one number divided by another. So 4 % 2 is 0, 9 % 2 is 1.
+We’ll appreciate it’s utility soon.</p>
+<p>Here’s an example using multiple operators:</p>
+<pre><code>void MyMosaicUpdate() {
+  int32 x = 0;
+  SetTileColor(x, 4, 1, 1, 1);
+  x += 1; // x is 1
+  SetTileColor(x, 4, 1, 1, 1);
+  x *= 2; // x is 2
+  SetTileColor(x, 4, 1, 1, 1);
+  x = x * x; // x is 4
+  SetTileColor(x, 4, 1, 1, 1);
+  x--; // x is 3
+  SetTileColor(x, 4, 1, 1, 1);
+}</code></pre>
+<p>Of course you can have more than one variable in a program, and you
+can any variable in an expression.</p>
+<pre><code>void MyMosaicUpdate() {
+  int32 x = 0;
+  int32 y = 4;
+  SetTileColor(x, y, 1, 1, 1);
+  // This isn&#39;t saying that x and y refer to the same thing,
+  // it&#39;s just copying the value of y into x. If y changes
+  // that will not change the value of x. 
+  x = y;
+  SetTileColor(x, y, 1, 1, 1);
+  y--;
+  SetTileColor(x, y, 1, 1, 1);
+  y = y + x;
+  x = 0;
+  SetTileColor(x, y, 1, 1, 1);
+}</code></pre>
+<p>Note that before you can use a variable you must first declare it.
+For example if you had moved line 3 below line 4 you would get an
+error.</p>
+<p>Here is a list of data types in C++, and I define differently sized
+variants for them (this is useful because we don’t always want to use 32
+bits for example if we know our number is never larger than 255).</p>
+<p>integer: int64, int32, int16, int8 unsigned integer: uint64, uint32,
+uint16, uint8 floating point real number: float32/real32,
+float64/real64</p>
+<p>There are more types that that which we’ll learn about soon, and
+we’ll be making our own types too, but that should get us started.</p>
+<p>if anyone feels like they’re editing the code file but they aren’t
+seeing their changes, here’s some things to look for: 1) make sure you
+saved your file. (VS will show an asterisk next to the file if it hasn’t
+been saved). 2) Make sure there are no compiler errors. These can happen
+if you misspell something or forget some punctuation. 3) make sure
+game.exe is closed before you compile. You can look for game.exe in the
+task manager if you’re having trouble finding it. The compiler will tell
+you that it failed to write to game.exe if it’s already open</p>
+<p>When compliing your code you may encounter errors that prevent the
+executable from being generated. The compiler will report error messages
+to you, and usually you can use the line number to find the file and
+location of the error. Here are some common errors you may
+encounter:</p>
+<ul>
+<li>“undeclared identifier” means that you are using a variable name
+that hasn’t been declared. May also be caused by using a variable type
+that doesn’t exist. This is commonly caused by a typo.</li>
+</ul>
+<pre><code>int32 number = 5;
+void MyMosaicUpdate() {
+  numbre += 1; // wrong name
+  x += 1; // undeclared variable
+}</code></pre>
+<ul>
+<li>“Identifier not found” means you are using a function name that
+doesn’t exist. For example “Inputpressed” instead of InputPressed.</li>
+</ul>
+<pre><code>void MyMosaicUpdate() {
+   if (InputPresssed(Keyboard, Etc_Space)) {
+
+   }  
+}</code></pre>
+<ul>
+<li>syntax error: missing ‘;’ means you missed a semicolon on the line
+above where the error is reported.</li>
+</ul>
+<pre><code>void MyMosaicUpdate() {
+   int32 x = 5
+   Print(&quot;hellow.&quot;); // the error message will be on this line saying that it expected a semicolon before Print.
+}</code></pre>
+<ul>
+<li>A missing bracket or paretheses can cause a “cascading error” where
+the complier reports a ton of errors (often in other files). The reason
+is because there’s a mismatch between the braces or parathentheses, so
+as it tries to match them it misinterprets which parts of the code
+belong to which scopes.</li>
+<li>“redefinition; previous definition was” this means you’re declaring
+a variable that has already been declared. For example if you said
+“int32 number = 5; int32 number = 7;” You’ve just told the compiler
+“make 2 things called number and give them different values”, but how
+can it know what “number” means now!</li>
+</ul>
+<p>I’ve said that our function MyMosaicUpdate() is being called from
+inside a while loop, but so far we haven’t really seen any evidence of
+that. We have been using it as if it runs one time. It has however been
+running many times, it’s just that each time we were telling it to do
+the same thing. Now we’ll use variables to store and change data over
+time as our update function runs multiple times.</p>
+<p>First, instead of declaring my variable inside the scope of
+MyMosaicUpdate (which means that each time our function runs it we’ll
+declare a variable and give it a value), I’m going to declare it once
+outside the scope of our function, and then change it’s value each time
+MyMosaicUpdate() executes.</p>
+<pre><code>real32 realRedWagon = 0.0f;
+
+void MyMosaicUpdate() {
+   SetTileColor(4, 4, realRedWagon, 0, 0);
+}</code></pre>
+<p>If you run and compile this code you’ll see that nothing happens, and
+that’s because I set realRedWagon to be 0, but never changed it’s value.
+Now I’m going to use an expression so that it changes each time
+MyMosaicUpdate() is called.</p>
+<pre><code>void MyMosaicUpdate() {
+   realRedWagon += 0.01f;
+   SetTileColor(4, 4, realRedWagon, 0, 0);
+}</code></pre>
+<p>Neat! We can see that the color of our tile changes over time.</p>
+<p>We call each time it runs our code a “frame”. This name comes from
+film and animation where the illusion of motion is created by displaying
+still images in a rapid sequence (traditionally 24 frames per second in
+film). This is exactly the same thing that happens in a game. Monitors,
+screens, and tvs all update at a certain rate, called the “refresh
+rate.” Our game tells the graphics card what image to display, and we
+need to continually update that image to create a sense of smooth motion
+or change.</p>
+<p>Note that if we did something like this:</p>
+<p>void MyMosaicUpdate() { real32 realRedWagon = 0; realRedWagon +=
+0.01f; SetTileColor(4, 4, realRedWagon, 0, 0); }</p>
+<p>we wouldn’t ever see any change because each time our function is
+called we create a new variable called realRedWagon, add 0.01 to it,
+then get rid of it when we finish running thru the scope of our
+function.</p>
+<p>Now there is a very important point to note about this: the rate at
+which our color changes is dependent on how many frames we display per
+second (put another way, how many times we update our simulation per
+second). This is very dependent on the specs of the computer you’re
+running on.</p>
+<p>Let’s take this code:</p>
+<pre><code>real32 realRedWagon = 0.0f;
+
+void MyMosaicUpdate() {
+   realRedWagon += 0.1f;
+   SetTileColor(4, 4, realRedWagon, 0, 0);
+}</code></pre>
+<p>It will always take 10 frames for red to reach a value of 1, but this
+means that our frame rate will determine how much time it takes to reach
+that value.</p>
+<p>If we’re running at 60 fps then red would reach a value of 1 in 1/6th
+of a second (10 frames / 60 frames per second)</p>
+<p>If we’re running at 120 fps then red would reach a value of 1 in
+1/12th of a second (10 frames / 120 frames per second)</p>
+<p>If we’re running at 144 fps then red would reach a value of 1 in
+1/14th of a second (10 frames / 144 frames per second)</p>
+<p>This is actually very undesirable behavior for a real time
+application. Consider the consequences: our animations now get faster or
+slower depending on the device. And we aren’t even doing physics
+simulations which would also vary in speed.</p>
+<p>To solve this issue we want to change our value by some increment
+that will vary depending on our frame rate. For this we use a value
+called “delta time”, which stores the number of seconds between the
+start of our last frame and the start of our current frame; in other
+words it stores how many seconds it took our last frame to do everything
+(get input, update state, render images, play audio, etc).</p>
+<p>Let’s call the time between the start of one frame and the start of
+another “deltaTime” (we get this name from physics and calculus where
+delta is used to represent the change between two values over a period
+of time).</p>
+<p>If we look at our different frame rates we can find the values of
+deltaTime At 60 FPS deltaTime = 1 / 60 = 16.6ms At 120 FPS deltaTime =
+1/120 = 8.3ms At 144 FPS deltaTime = 6.9ms</p>
+<pre><code>See how our delta time gets smaller the faster our frame rate is. This makes sense because we&#39;re doing more stuff in the same amount of time, so obviously we must be doing each frame more quickly. 
+Now if we use this delta time value in our calculation we can achieve &quot;frame rate independence.&quot;</code></pre>
+<p>In the Mosaic engine we have access to a variable called DeltaTime
+which is calculated for us.</p>
+<pre><code>real32 realRedWagon = 0.0f;
+void MyMosaicUpdate() {
+    SetTileColor(4, 4, red, 0, 0);
+    realRedWagon= realRedWagon + DeltaTime;
+}</code></pre>
+<p>We now see that no matter how many FPS our game is running at,
+realRedWagon will reach a value of 1 after 1 second.</p>
+<p>We can of course scale deltaTime to achieve different speeds.</p>
+<p>realRedWagon = realRedWagon + (2 * DeltaTime);</p>
+<p>Now it will get to a value of 1 in half a second.</p>
+<p>Experiment with this yourself: create variables for each of the color
+channels and vary them at different rates using deltaTime. Try creating
+a variable for the x and y position and then change those values over
+time using deltaTime.</p>
+<p>Note that our tiles are always at integer positions (0, 0), (1, 0),
+(2, 0) and so on; but we can use a real number when calling
+SetTileColor, it’s just that the decimal/fractional part of the number
+will get lopped off. So an x position of 1.5 is really just 1, as is
+1.9999, and 2.00001 is 2, and so on.</p>
+<p>If you haven’t tried changing the position yet, please do so. If you
+have then read on.</p>
+<p>Notice that our tile now appears at the new position. This is because
+every frame we’re clearing all the tiles to black. We do this because
+it’s simpler and more efficient to just wipe the screen and redraw
+everything each frame, even if it’s state hasn’t actually changed, than
+it is to keep track of which pixels need to be updated and which ones
+should stay the same. We want to do so often in graphics programming we
+have a function for it: ClearTiles() which takes 3 color channel values
+and sets all the tiles to that color. We do this at the beginning of
+every frame so that we start from a clean slate.</p>
+<pre><code>real32 x = 0.0f;
+void MyMosaicUpdate() {
+    ClearTiles(0, 0, 0);
+
+    SetTileColor(x, 4, 1, 0, 0);
+    x = x + (2 * DeltaTime);
+}</code></pre>
+</body>
+</html>

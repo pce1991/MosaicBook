@@ -1,3 +1,6 @@
+
+# VARIABLES AND VALUES
+
 I said in the beginning that a program is something that transforms data. In the previous section we learned some ways to transform data, namely the data of tiles. This transformation evolved a couple of pieces of data: the x and y coordinates of the tile we wanted to change, and the red, green, and blue color values we wanted to use for that tile. In those examples we supplied the data itself. 
 
 Very often we want to store a piece of data and give it a name; then we can use that name to refer to that piece of data. We call that name a "variable". 

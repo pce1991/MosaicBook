@@ -1,3 +1,5 @@
+
+# INTRO
 We'll be writing our programs in the Mosaic game engine. The defining feature of Mosaic is an N by M grid of "tiles", which are squares that can be set to any color. 
 
 The first thing to do is make sure that you download the Mosaic engine and unzip it. You'll see a few folders, and the one you want to look for is titled "src." In it you'll see a file called "my_mosaic.cpp", so go ahead and open that in your text editor (such as Visual Studio). 
