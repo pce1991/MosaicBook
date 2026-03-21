@@ -17,6 +17,5 @@ problems. And once an engine has solved the easy problems for you there
 are only hard problems left, and you want some experience solving
 problems before taking those on.
 
-Mosaic is a game engine that's easy to understand, to peel back the
-layers and check underneath the hood. It is the bare minimum needed to
-get a game running on Windows.
+Mosaic is a game engine that's easy to understand so you can peel back the
+layers and check underneath the hood. It is pretty close to the bare minimum needed to get a game running on Windows.

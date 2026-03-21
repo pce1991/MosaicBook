@@ -1,3 +1,15 @@
+
+- start adding a lot more examples from things I show in my lectures:
+  Physics and collision
+  Image rendering and generation
+  Basic games
+  Rube Goldberg machine
+
+  Need to strike balance between showing people how to do things and leaving them problems to solve. Like Pong is something they should put together themselves. 
+  
+
+@TODO: add more exercises and assignments. 
+
 * misc
 * incremental steps
 * Pausing
