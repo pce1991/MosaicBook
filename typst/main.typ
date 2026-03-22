@@ -1,5 +1,40 @@
+
+#set page(
+  width: 8.5in,
+  height: 11in,
+  margin: (x: 0.75in, y: 1in), // 'x' sets both left and right to 0.75in
+)
+
 #set heading(numbering: "1.")
 #outline(indent: auto)
+
+// This is so the line breaks don't show up in the TOC
+// But i'm not sure it works
+#show outline: it => {
+  show linebreak: [ ]
+  it
+}
+
+
+// TITLE PAGE
+#page(numbering: none, margin: (rest: 1in))[
+  #set align(center)
+  #v(1fr) // "Spring" at the top
+  
+  #text(size: 32pt, weight: "bold")[MOSAIC]
+  
+  #v(1.5em)
+  
+  //#text(size: 18pt, style: "italic")[How to Make Games]
+  
+  #v(3em)
+  
+  #text(size: 14pt)[By Collin Eye]
+  
+  #v(1fr) // "Spring" at the bottom pushes everything to the center
+  
+  #text(size: 10pt)[2026 Edition]
+]
 
 // #set page(
 //   width: 6in,
@@ -7,11 +42,9 @@
 //   margin: (inside: 1in, outside: 0.75in, y: 1in),
 // )
 
-#set page(
-  width: 8.5in,
-  height: 11in,
-  margin: (x: 0.75in, y: 1in), // 'x' sets both left and right to 0.75in
-)
+
+#set text(lang: "en", hyphenate: true)
+#set par(justify: true, linebreaks: "optimized")
 
 #set text(
   font: "Century Schoolbook",
@@ -93,13 +126,20 @@
   if n.pos().len() > 1 { numbering("1.", n.pos().last()) }
 })
 
+#page(numbering: none, margin: 1in)[
+  MOSAIC
+]
+
 = PART 0 \ PRELUDE
 #pagebreak()
 
 #include "philosophy.typ"
 #pagebreak()
 
-= PART 1 \ PROGRAMMING FUNDAMENTALS
+#include "quotes.typ"
+#pagebreak()
+
+= PART 1 \ PROGRAMMING \ FUNDAMENTALS
 #pagebreak()
 
 #include "mosaic_intro.typ"
@@ -138,7 +178,7 @@
 #include "functions_2.typ"
 #pagebreak()
 
-= PART 2 \ GAME FUNDAMENTALS
+= PART 2 \ GAME \ FUNDAMENTALS
 #include "random_values.typ"
 #pagebreak()
 
@@ -165,7 +205,7 @@
 #include "file_writing.typ"
 #pagebreak()
 
-= PART 4 \ DATA STRUCTURES
+= PART 4 \ DATA \ STRUCTURES
 #include "outside_mosaic.typ"
 #pagebreak()
 
