@@ -188,6 +188,9 @@
 #include "raycasts.typ"
 #pagebreak()
 
+#include "tunneling.typ"
+#pagebreak()
+
 = PART 3 \ MEMORY
 
 #include "pointers.typ"

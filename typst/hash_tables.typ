@@ -1,3 +1,6 @@
+== HASH TABLE
+<hashtable>
+
 A hash table (sometimes called a map or dictionary) is a data structure
 for associating two pieces of data, a `key` and a `value`. You can think
 of an array as a hash table where the key is simply the index of the

@@ -1,3 +1,6 @@
+== FREE LISTS
+<freelists>
+
 A free list is a data structure that can help us manage a collection of
 things by keeping track of which things in that collection are available
 for reuse.

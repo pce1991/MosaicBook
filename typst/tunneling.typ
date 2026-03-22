@@ -1,3 +1,8 @@
+== TUNNELING
+<tunneling>
+
+// Maybe a better name would be time-stepping
+
 If we have an object that is moving very fast it can "tunnel" thru a
 collider. Say that it's moving with a speed of 300, that means it's
 moving 5 units per frame at 60FPS. So let's say that our starting x
@@ -13,7 +18,7 @@ never moves more than 1 unit without checking for a collision. We of
 course still want to allow speeds greater than 1, but we must do it in
 pieces.
 
-#box(image("C:\\Users\\pce\\MosaicBook\\images\\tunneling1.PNG"))
+#box(image("images\\tunneling1.PNG"))
 
 So let's take our code
 
@@ -47,5 +52,4 @@ while (distanceToTravel >= 0.0) {
 }
 ```
 
-\[NOTE TO AUTHOR: show examples using actual AABB collision which gives
-us the direction of overlap\]
+//\[NOTE TO AUTHOR: show examples using actual AABB collision which gives us the direction of overlap\]

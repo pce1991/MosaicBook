@@ -1,3 +1,6 @@
+== OUTER MOSAIC
+<outer-mosaic>
+
 The code you've been writing in Mosaic has been at the outer-most layer.
 If we peel that back we can look we can see that the idea of a grid of
 tiles is a construct built on top of the features of a lower layer. What
