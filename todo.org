@@ -8,7 +8,11 @@
   Need to strike balance between showing people how to do things and leaving them problems to solve. Like Pong is something they should put together themselves. 
   
 
-@TODO: add more exercises and assignments. 
+@TODO: add more exercises and assignments.
+
+
+@TODO: show debug drawing features in Mosaic section.
+
 
 * misc
 * incremental steps
@@ -17,6 +21,9 @@ Show how you can write your code to pause and only update when a key is pressed.
 
 * enum typed structs and tagged unions
 @TODO: post a thing about tagged-unions
+
+* functions part 2
+It's kinda weird to break this up into two parts. The reason is that a lot of the examples I have for returning a value involve working on an array. 
 
 * tunnling
 Show fixed-timestep as well

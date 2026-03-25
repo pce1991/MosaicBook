@@ -52,3 +52,19 @@ for (int32 i = 0; i < myArray.count; i++) {
 }
 ```
 
+Another helpful function is `DynamicArrayClear()` which will take an array and set the count to 0. This will be faster than removing each element individually because when you do that the memory must be shifted over. 
+
+```
+
+for (int32 i = 0; i < 10; i++) {
+  PushBack(&myArray, i * 10);
+}
+
+for (int32 i = 0; i < myArray.count; i++) {
+   Print("element[%d]: %d", i, myArray[i]);
+}
+
+DynamicArrayClear(&myArray);
+
+Print("array count is now %d", myArray.count);
+```
