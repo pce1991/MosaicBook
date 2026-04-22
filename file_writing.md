@@ -71,3 +71,16 @@ sprintf(numStr, "%d", number);
 WriteString(&file, numStr, StringLength(numStr));
 ```
 
+You have similar functions for reading binary data. 
+
+```
+// returns a single unsighed byte
+u8 ReadByte(FileHandle *file);
+
+// returns the number of bytes read and writes them out into ptr
+uint64 ReadBytes(FileHandle *file, u64 count, void *ptr);
+
+// reads 4 bytes and writes out into ptr
+void ReadInt32(FileHandle *file, int32 *ptr);
+void ReadReal32(FileHandle *file, real32 *ptr);
+```
