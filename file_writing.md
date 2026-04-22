@@ -84,3 +84,5 @@ uint64 ReadBytes(FileHandle *file, u64 count, void *ptr);
 void ReadInt32(FileHandle *file, int32 *ptr);
 void ReadReal32(FileHandle *file, real32 *ptr);
 ```
+
+When you're reading a binary file and writing it into a struct, make sure that you read data in the correct order. 
