@@ -38,6 +38,7 @@
 
 [Functions 2](https://github.com/pce1991/MosaicBook/blob/main/functions_2.md)
 
+[Tile Sprites](https://github.com/pce1991/MosaicBook/blob/main/tile_sprites.md)
 ## Game Fundamentals
 
 [Random Values](https://github.com/pce1991/MosaicBook/blob/main/random_values.md)
