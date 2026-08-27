@@ -30,7 +30,7 @@ void MyInit() {
     // All sprites must be png files
     // You provide the path to the png like "directory/to/my/file/file_name.png"
     // In this case I have put the pngs inside the "data" directory.
-    LoadSprite(&Data.sprite, "data/galaga_ship.png");
+    LoadSprite("data/galaga_ship.png", &Data.sprite);
 
     AllocateMemoryArena(&Data.arena, Megabytes(64));
 
