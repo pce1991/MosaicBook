@@ -44,12 +44,12 @@ void MyGameUpdate() {
 You can change the camera parameters as well.
 
 ```
-Camera *camera = &Game->camera;
+Camera *camera = &Core->camera;
 camera->position.x = sinf(Time);
 camera->size = 1 + ((1 + sinf(Time)) * 0.5f);
 
 // Always make sure you call UpdateCamera so it can recompute the projection matrix
 // at the new size and position.
-UpdateCamera(&Game->camera);
+UpdateCamera(&Core->camera);
 ```
 
