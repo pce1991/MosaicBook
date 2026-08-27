@@ -1,4 +1,4 @@
-We've seen already how functions can be used to group code together. Remember that when a function is called our program "steps into" it and begins executing the instructions in the body of that function. And remember that a function can take arguments. 
+﻿We've seen already how functions can be used to group code together. Remember that when a function is called our program "steps into" it and begins executing the instructions in the body of that function. And remember that a function can take arguments. 
 
 ```
 //   <name> <arguments>

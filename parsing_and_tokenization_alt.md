@@ -1,4 +1,4 @@
-When parsing you're just converting a string into some data your program can actually use, like a list of command nodes:
+﻿When parsing you're just converting a string into some data your program can actually use, like a list of command nodes:
 
 ```
 enum NodeType {

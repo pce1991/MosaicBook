@@ -1,4 +1,4 @@
-Enums are a conveinent way to create a new type of data that represents a set of possible values. For example you might have a player character that can be in some number of states like "idle, running, jumping, and falling". You could of course use an integer to represent that data, but that can be rather opaque. Instead you could create a type PlayerState which is known to only have the values that you "enumerate."
+﻿Enums are a conveinent way to create a new type of data that represents a set of possible values. For example you might have a player character that can be in some number of states like "idle, running, jumping, and falling". You could of course use an integer to represent that data, but that can be rather opaque. Instead you could create a type PlayerState which is known to only have the values that you "enumerate."
 
 ```
 enum PlayerState {

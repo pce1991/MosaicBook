@@ -1,4 +1,4 @@
-We know that when we make a variable we are telling the CPU that we need some memory of a certain size to store our data, and that our variable name can be used to give us the contents at that memory address, or we can copy new data into that address by using the assignment operator =. 
+﻿We know that when we make a variable we are telling the CPU that we need some memory of a certain size to store our data, and that our variable name can be used to give us the contents at that memory address, or we can copy new data into that address by using the assignment operator =. 
 
 When we assign one variable to another we're simply copying over the data, we are not actually saying that the two things will remain equal.
 

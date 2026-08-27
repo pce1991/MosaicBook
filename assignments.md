@@ -1,4 +1,4 @@
-Assignment 1
+﻿Assignment 1
 
 In this assignment you'll modify the my_mosaic.cpp file to do the following things.
 
@@ -157,10 +157,10 @@ A useful operator is the "modulo" operator, written as %. This operator gives yo
 For example this will draw a row of 10 tiles where every other one goes unset.
 
 for (int32 x = 0; x < 10; x++) {
-        if (x % 2 == 0) {
-            SetTileColor(x, 0, 0.2f, 0.2f, 0.8f);
-        }
- }
+Â  Â  Â  Â  if (x % 2 == 0) {
+Â  Â  Â  Â  Â  Â  SetTileColor(x, 0, 0.2f, 0.2f, 0.8f);
+Â  Â  Â  Â  }
+Â }
  
  Assignment 6
  In this assignment you'll write functions that set the values inside an array. Your program should have a mode corresponding to each item in this list. You should call the function corresponding to the mode your program is in. Your program should have 3 color arrays (1 for each channel) and 2 position arrays (1 for each component). The arrays should have enough capacity to store a position and color value for each tile on the grid (tho you don't have to use every element in the array). For example if your grid is 16x16 (the default value, you'd have a capacity of 256). You must use a larger grid size tho. You'll need a single count value which represents how much of the array you're using. In your MyMosaicUpdate you should loop over the elements in the array up to count and set the tile color for each element.
@@ -194,31 +194,31 @@ int32 modeIndex = 0;
 
 void Mode1() {
 
-    //...
+Â Â Â  //...
 
 }
 
 void MyMosaicUpdate() {
 
-    if (InputPressed(Keyboard, Input_Space)) {
+Â Â Â  if (InputPressed(Keyboard, Input_Space)) {
 
-        if (modeIndex == 1) {
+Â Â Â Â Â Â Â  if (modeIndex == 1) {
 
-          Mode1();
+Â Â Â Â Â Â  Â Â  Mode1();
 
-        }
+Â Â Â Â Â Â Â  }
 
-       modeIndex++;
+Â  Â  Â Â  modeIndex++;
 
-   }
+Â Â  }
 
-   // Loop over the elements in your array and call SetTileColor
+Â Â  // Loop over the elements in your array and call SetTileColor
 
-  for (int i = 0; i < elements; i++) {
+Â  for (int i = 0; i < elements; i++) {
 
-     SetTileColor(xs[i], ys[i], reds[i], greens[i], blues[i]);
+Â Â Â Â  SetTileColor(xs[i], ys[i], reds[i], greens[i], blues[i]);
 
-  }
+Â  }
 
 }
 
@@ -277,7 +277,7 @@ Here's some example code of spawning and deleting.
 ```
 // Spawning example
 struct Guy {
-    vec2 position;
+Â  Â  vec2 position;
 };
 
 int32 count = 0;
@@ -285,29 +285,29 @@ Guy guys[100];
 
 void MyMosaicUpdate() {
 
-    // notice that spawning just means "using one more thing from the array"
-    if (InputPressed(Keyboard, Etc_Space)) {
-        Guy g = {};
-        g.position = V2(RandfRange(0, 10), 0);
-        guys[count] = g;
-        count++;
-    }
+Â  Â  // notice that spawning just means "using one more thing from the array"
+Â  Â  if (InputPressed(Keyboard, Etc_Space)) {
+Â  Â  Â  Â  Guy g = {};
+Â  Â  Â  Â  g.position = V2(RandfRange(0, 10), 0);
+Â  Â  Â  Â  guys[count] = g;
+Â  Â  Â  Â  count++;
+Â  Â  }
 
-    // here we're going to delete the thing at the front of the array
-    if (InputPressed(Keyboard, Etc_Tab)) {
-        // we delete by swapping in the data at the end of our array for the index that we're deleting
-        // that way there's no gaps in our array. 
-        int32 indexToDelete = 0; 
-        // this could be any index between 0 and our count, tho if it's 
-        // at the end then we don't need to swap anything to its place.
+Â  Â  // here we're going to delete the thing at the front of the array
+Â  Â  if (InputPressed(Keyboard, Etc_Tab)) {
+Â  Â  Â  Â  // we delete by swapping in the data at the end of our array for the index that we're deleting
+Â  Â  Â  Â  // that way there's no gaps in our array.Â 
+Â  Â  Â  Â  int32 indexToDelete = 0;Â 
+Â  Â  Â  Â  // this could be any index between 0 and our count, tho if it'sÂ 
+Â  Â  Â  Â  // at the end then we don't need to swap anything to its place.
 
-        guys[indexToDelete] = guys[count - 1];
-        count--;
-    }
+Â  Â  Â  Â  guys[indexToDelete] = guys[count - 1];
+Â  Â  Â  Â  count--;
+Â  Â  }
 
-    for (int i = 0; i < count; i++) {
-        Guy g = guys[i]; // creating a copy of the element so we can easily access the data
-        SetTileColor(g.position.x, g.position.y, 1, 0, 0);
-    }
+Â  Â  for (int i = 0; i < count; i++) {
+Â  Â  Â  Â  Guy g = guys[i]; // creating a copy of the element so we can easily access the data
+Â  Â  Â  Â  SetTileColor(g.position.x, g.position.y, 1, 0, 0);
+Â  Â  }
 }
 ```

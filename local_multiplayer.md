@@ -1,4 +1,4 @@
-In this assignment you'll make a simple local multi-player game and get familiar with the approach that you'd want to take for a networked game. 
+﻿In this assignment you'll make a simple local multi-player game and get familiar with the approach that you'd want to take for a networked game. 
 
 In a networked game it's very helpful to use a transaction system to update your game data. For example if a player spawns a projectile, instead of sending over all the data for that projectile over the network, you could just send a transaction that says "spawn a projectile at this position."
 

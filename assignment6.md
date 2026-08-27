@@ -1,4 +1,4 @@
-In this assignment you will use loops and conditionals to draw various shapes.
+﻿In this assignment you will use loops and conditionals to draw various shapes.
 
 Your program will have N modes (one for each shape you want to draw). You'll use conditionals to choose which mode gets executed. Use the space bar to cycle between the modes. The basic structure looks like this.
 

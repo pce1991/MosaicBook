@@ -1,4 +1,4 @@
-We've been using several built-in types such as int32 and float32. Now we're going to learn how to create our own types out of these built-in types. The way we do this is with a struct, which is a way to bundle a group of data together in one type. 
+﻿We've been using several built-in types such as int32 and float32. Now we're going to learn how to create our own types out of these built-in types. The way we do this is with a struct, which is a way to bundle a group of data together in one type. 
 
 ```
 struct <name> {
@@ -52,8 +52,8 @@ For example we've already seen and been using a struct: vec2
 
 ```
 struct vec2 {
-   float32 x;
-   float32 y;
+Â  Â float32 x;
+Â  Â float32 y;
 };
 ```
 
@@ -61,9 +61,9 @@ Whenever we make a thing of type vec2 we're telling the computer we need enough 
 
 ```
 struct Ball {
-    // Member variables or parameters or fields
-    vec2 position;
-    vec2 velocity;
+Â  Â  // Member variables or parameters or fields
+Â  Â  vec2 position;
+Â  Â  vec2 velocity;
 };
 ```
 
@@ -75,26 +75,26 @@ Ball ball = {};
 
 
 void MyMosaicInit() {
-    SetMosaicGridSize(40, 40);
-    SetMosaicScreenColor(0.2f, 0.2f, 0.2f);
-    // We can access the different members of a struct by using the dot operator.
-    // notice that we can "drill down" using this operator. We say "take the ball,
-    // give me the position, now take that position, and give me x."
-    ball.position.x = 5;
-    ball.position.y = 9;
-    ball.velocity.x = 0;
-    ball.velocity.y = 5;
+Â  Â  SetMosaicGridSize(40, 40);
+Â  Â  SetMosaicScreenColor(0.2f, 0.2f, 0.2f);
+Â  Â  // We can access the different members of a struct by using the dot operator.
+Â  Â  // notice that we can "drill down" using this operator. We say "take the ball,
+Â  Â  // give me the position, now take that position, and give me x."
+Â  Â  ball.position.x = 5;
+Â  Â  ball.position.y = 9;
+Â  Â  ball.velocity.x = 0;
+Â  Â  ball.velocity.y = 5;
 }
 
 void MyMosaicUpdate() {
-    ClearTiles(0, 0, 0);
-    ball.position.y += ball.velocity.y * DeltaTime;
-    if (ball.position.y > 39) {
-        ball.velocity.y *= -1;
-        ball.position.y = 39;
-        // clamp our position so it's not invalid
-    }
-    SetTileColor(ball.position, 0.3f, 0.8f, 0.7f);    
+Â  Â  ClearTiles(0, 0, 0);
+Â  Â  ball.position.y += ball.velocity.y * DeltaTime;
+Â  Â  if (ball.position.y > 39) {
+Â  Â  Â  Â  ball.velocity.y *= -1;
+Â  Â  Â  Â  ball.position.y = 39;
+Â  Â  Â  Â  // clamp our position so it's not invalid
+Â  Â  }
+Â  Â  SetTileColor(ball.position, 0.3f, 0.8f, 0.7f); Â  Â 
 }
 ```
 

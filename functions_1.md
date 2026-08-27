@@ -1,4 +1,4 @@
-Thruout our programming we have been using functions (SetTileColor, SetMosaicGridSize, sinf, InputPressed…) and we have even been defining our own: MyMosaicInit() and MyMosaicUpdate().
+﻿Thruout our programming we have been using functions (SetTileColor, SetMosaicGridSize, sinf, InputPressedâ€¦) and we have even been defining our own: MyMosaicInit() and MyMosaicUpdate().
 A function is a block of code grouped together under a name. This gives us a couple things: 1) it makes it easy to group code by concept and 2) it allows us to reuse blocks of code without actually repeating it, but by simply typing the function name.
 When we type the name of a function we "call it." When we call a function what happens is that our program enters the scope of the function and runs the code; when it reaches the end of the function it "returns", meaning that our code picks up on where it left off when the function was called.
 There is a world outside our MyMosaicUpdate(): some code some where is calling the function that we have been writing.

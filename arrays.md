@@ -1,4 +1,4 @@
-In games the problems we are trying to solve usually involve multiple instances of the same type of data. If you think of the games you've played there are almost always multiple characters, objects, animations, sounds, and so on.
+﻿In games the problems we are trying to solve usually involve multiple instances of the same type of data. If you think of the games you've played there are almost always multiple characters, objects, animations, sounds, and so on.
 
 Even in our example from Physics we had two objects you were trying to dodge. Adding a third would be doable, but would involve a bit of code duplication. Adding 10 would be a pain.
 

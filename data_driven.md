@@ -1,4 +1,4 @@
-A very powerful approach to designing good systems is to let the data drive the behavior. 
+﻿A very powerful approach to designing good systems is to let the data drive the behavior. 
 
 Particle emitters are a good example. One approach would be to write code for each type of particle behavior you want, which means you'll need to be writing functions that control the rate they spawn, and how they update after they're spawned. The other approach is to let your data define the behavior of your system. 
 

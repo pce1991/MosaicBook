@@ -1,4 +1,4 @@
-
+﻿
 When compliing your code you may encounter errors that prevent the executable from being generated. The compiler will report error messages to you, and usually you can use the line number to find the file and location of the error. Here are some common errors you may encounter:
 
 * "undeclared identifier" means that you are using a variable name that hasn't been declared. May also be caused by using a variable type that doesn't exist. This is commonly caused by a typo.

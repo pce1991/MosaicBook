@@ -1,4 +1,4 @@
-The code you've been writing in Mosaic has been at the outer-most layer. If we peel that back we can look we can see that the idea of a grid of tiles is a construct built on top of the features of a lower layer. What Mosaic has been doing is drawing a grid of colored "quads", and we've been manipulating those colors by calling `SetTileColor`. That grid has been centered in the screen and the position of these tiles has been fixed. 
+﻿The code you've been writing in Mosaic has been at the outer-most layer. If we peel that back we can look we can see that the idea of a grid of tiles is a construct built on top of the features of a lower layer. What Mosaic has been doing is drawing a grid of colored "quads", and we've been manipulating those colors by calling `SetTileColor`. That grid has been centered in the screen and the position of these tiles has been fixed. 
 
 To step outside of Mosaic you'll go into `game_code.cpp` and change `#define MOSAIC 1` to `#define MOSAIC 0`. This will skip compiling the`my_mosaic.cpp` file and compile `my_game.cpp` instead. This has a familiar structure where we have an update and an init function. 
 
@@ -44,12 +44,12 @@ void MyGameUpdate() {
 You can change the camera parameters as well.
 
 ```
-Camera *camera = &Game->camera;
+Camera *camera = &Core->camera;
 camera->position.x = sinf(Time);
 camera->size = 1 + ((1 + sinf(Time)) * 0.5f);
 
 // Always make sure you call UpdateCamera so it can recompute the projection matrix
 // at the new size and position.
-UpdateCamera(&Game->camera);
+UpdateCamera(&Core->camera);
 ```
 

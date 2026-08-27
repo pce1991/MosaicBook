@@ -1,4 +1,4 @@
-# Allocation
+﻿# Allocation
 
 Sometimes we refer to a chunk of memory that we've allocated as a buffer. It is essentially just like an array, except that sometimes we might store things of different types there. 
 

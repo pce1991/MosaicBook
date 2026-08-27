@@ -1,4 +1,4 @@
-```
+﻿```
 // Manual can be found here:
 // https://github.com/pce1991/MosaicBook#readme
 
@@ -34,7 +34,7 @@ void MyInit() {
 
     AllocateMemoryArena(&Data.arena, Megabytes(64));
 
-    int32 *entityTypeCounts = PushArray(&Game->frameMem, int32, EntityType_Count);
+    int32 *entityTypeCounts = PushArray(&Core->frameMem, int32, EntityType_Count);
     entityTypeCounts[EntityType_Entity] = 100;
 
     AllocateEntityManager(&Data.em, &Data.arena, 1024, entityTypeCounts);

@@ -1,4 +1,4 @@
-An axis-aligned bounding box (hereby referred to as an *AABB*) is defined by two points: the point with the minimum coordinates, and the point with the maximum coordinates, here by referred to as *min* and *max*. 
+﻿An axis-aligned bounding box (hereby referred to as an *AABB*) is defined by two points: the point with the minimum coordinates, and the point with the maximum coordinates, here by referred to as *min* and *max*. 
 
 To determine if a point lies within a bounding box we need to check if that point's x coordinate lies between the min and max values on the x-axis, and then do the same for the y-axis. This function in Mosaic does just that. I recommend drawing this out on graph paper to visualize what it is doing and the cases that succeed and those that fail. 
 

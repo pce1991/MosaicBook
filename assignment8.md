@@ -1,4 +1,4 @@
-In this assignment you will write a program that can read a file off of disk and convert that into data that the game can use. The file will use a simple "legend" format where an ASCII character will represent a type of object. Each of your levels will be NxM. 
+﻿In this assignment you will write a program that can read a file off of disk and convert that into data that the game can use. The file will use a simple "legend" format where an ASCII character will represent a type of object. Each of your levels will be NxM. 
 
 Here is an example of what a level file could look like. The legend I'm using is that 
 

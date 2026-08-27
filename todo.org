@@ -1,4 +1,4 @@
-
+﻿
 - start adding a lot more examples from things I show in my lectures:
   Physics and collision
   Image rendering and generation

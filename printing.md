@@ -1,4 +1,4 @@
-A very powerful tool you have to inspect the behavior of your program is displaying values in real time. There are two ways we can do this: we can print them into the output buffer on Visual Studio, or we can display text on the screen.
+﻿A very powerful tool you have to inspect the behavior of your program is displaying values in real time. There are two ways we can do this: we can print them into the output buffer on Visual Studio, or we can display text on the screen.
 
 To print to the console we'll use the Print command. This function takes a string argument and ouputs it in VS. For example:
 

@@ -1,4 +1,4 @@
-Sorting an array
+﻿Sorting an array
 - least to greatest values
 - alphabetically
 

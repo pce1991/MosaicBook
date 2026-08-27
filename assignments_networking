@@ -1,4 +1,4 @@
-Assignment 1
+﻿Assignment 1
 
   Download the Mosaic game engine here.
    Compile the network_simple.cpp. You'll neet to change the ServerAddress to your local ip number. To get this simply run "ipconfig" from the command line and look for IPv4 address.

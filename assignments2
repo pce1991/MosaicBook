@@ -1,4 +1,4 @@
-Assignment 1
+﻿Assignment 1
 
 In this assignment we'll use timers, loops, functions, and input to create a visual program. Your program should have 4 "modes", each of which represents a different visual "piece." You should toggle between the modes using the space bar.
 A mode should be written as a function. When a mode is active you should call that function from MyMosaicUpdate(). The mode should use a loop to iterate over all the tiles in the grid and set them to colors. Tiles do not all have to be the same color. What colors you're using should change over time to create an evolving image. You should use the idea of keyframes to represent how your image is changing.

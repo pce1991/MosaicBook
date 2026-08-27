@@ -1,4 +1,4 @@
-Playing sounds:
+﻿Playing sounds:
 
 ```
 SoundClip sound;
@@ -11,7 +11,7 @@ void MyMosaicInit() {
 void MyMosaicUpdate() {
    if (InputPressed(Keyboard, Input_Space)) {
        // <audio player>, <sound clip>, <volume>, <loop>
-        PlaySound(&Game->audioPlayer, sound, 1.0f, false);
+        PlaySound(&Core->audioPlayer, sound, 1.0f, false);
    }
 }
 ```

@@ -1,4 +1,4 @@
-Because our games have been very simple we've been able to declare all our arrays as global variables, meaning that every block of code has access to them. However there may be times we want to declare an array locally or write a function that can operate more generically. 
+﻿Because our games have been very simple we've been able to declare all our arrays as global variables, meaning that every block of code has access to them. However there may be times we want to declare an array locally or write a function that can operate more generically. 
 
 Let's look at an example:
 

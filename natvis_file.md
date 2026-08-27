@@ -1,4 +1,4 @@
-It's possible to create custom inspectors for data structures like our DynamicArray in Visual Studio. There is a file in the `natvis` directory called DynamicArray.natvis.
+﻿It's possible to create custom inspectors for data structures like our DynamicArray in Visual Studio. There is a file in the `natvis` directory called DynamicArray.natvis.
 
 This will give us a nice view of the DynamicArray in the watch window when debugging. 
 

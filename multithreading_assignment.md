@@ -1,4 +1,4 @@
-In this assignment you'll get practice on multithreaded programming. You'll want to make sure that your threads start at a specified time, and that the main thread doesn't finish the frame's update until the threads are finished. 
+﻿In this assignment you'll get practice on multithreaded programming. You'll want to make sure that your threads start at a specified time, and that the main thread doesn't finish the frame's update until the threads are finished. 
 
 To do this work use the my_game.cpp file by enabling it in game_code.cpp. 
 
@@ -49,7 +49,7 @@ void MyGameUpdate() {
   vec2 size = V2(0.1f, 0.1f);
   vec4 color = V4(1, 1, 1, 1);
   for (int i = 0; i < boids.count; i++) {
-    DrawRect(&Game->rectBuffer, boids[i].position, size, 0.0f, color);
+    DrawRect(&Core->rectBuffer, boids[i].position, size, 0.0f, color);
   }
 }
 

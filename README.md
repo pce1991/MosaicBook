@@ -1,4 +1,4 @@
-# Mosaic
+﻿# Mosaic
 [Philosophy](https://github.com/pce1991/MosaicBook/blob/main/philosophy.md)
 
 [Download the Mosaic Engine on itch.io](https://etalgames.itch.io/mosaic)
@@ -9,6 +9,7 @@
 
 [Mosaic Documentation](https://github.com/pce1991/MosaicBook/blob/main/mosaic_documentation.md)
 
+[Mosaic Config](https://github.com/pce1991/MosaicBook/blob/main/mosaic_config.md)
 ## Programming Fundamentals
 [Introducing Mosaic](https://github.com/pce1991/MosaicBook/blob/main/mosaic_intro.md)
 

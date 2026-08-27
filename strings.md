@@ -1,4 +1,4 @@
-A string is a term used in computer science to refer to a sequence of characters. Strings are often thought of as one of our "core" datatypes, along with ints and floats and chars. However there are some things about strings in C++ that make them look very different. So let's start with "sequence of characters." That's what an array is: a sequence of elements of some data type. In C/C++ one of our built-in types is the char. It is 1 byte, and is used to represent an ASCII code. 
+﻿A string is a term used in computer science to refer to a sequence of characters. Strings are often thought of as one of our "core" datatypes, along with ints and floats and chars. However there are some things about strings in C++ that make them look very different. So let's start with "sequence of characters." That's what an array is: a sequence of elements of some data type. In C/C++ one of our built-in types is the char. It is 1 byte, and is used to represent an ASCII code. 
 
 So we could say that a string is 
 

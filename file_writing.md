@@ -1,4 +1,4 @@
-At its core writing a file is just about copying some bytes in our program's memory into a file on disk so that it can be accessed by other programs (like exporting a model), or ourselves in a different session of our program (like loading a save game).
+﻿At its core writing a file is just about copying some bytes in our program's memory into a file on disk so that it can be accessed by other programs (like exporting a model), or ourselves in a different session of our program (like loading a save game).
 
 In mosaic we use this function to write a file: `bool OpenFileForWrite(char *path, FileHandle *file, MAllocator *alloc, uint32 size)`
 

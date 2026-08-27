@@ -1,4 +1,4 @@
-Every now and then we want to express the idea of something representing multiple types. A common example is in a game where we have an object that collides with a subset of all our possible object types. 
+﻿Every now and then we want to express the idea of something representing multiple types. A common example is in a game where we have an object that collides with a subset of all our possible object types. 
 
 Let's take an example:
 

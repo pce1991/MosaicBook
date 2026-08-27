@@ -1,4 +1,4 @@
-
+﻿
 We discussed how heap allocation can be expensive. So we want to reduce the number of heap allocations. One way we do this is with custom allocators.
 
 A memory arena is one of the simplest types of allocators. It works by making one allocation, and then doling out memory from that buffer when requested. A memory arena works like a stack: you can push allocations onto the stack, the arena will then increase the stack pointer for the next allocation you make. This means that allocations on a memory arena are very cheap since all that happens is it returns us a pointer from a previously heap allocated region and then increases the offset from that pointer. 

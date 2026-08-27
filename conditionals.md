@@ -1,4 +1,4 @@
-# Conditionals
+﻿# Conditionals
 
 So far our programs have have been processes that change over time, but we've been missing a key ability: for our program to make decisions. We call a making a decision about whether code runs or not a "conditional". All sorts of programs require the conditionals, but the reason they're crucial to interactive programs is because we want to respond to input: "if this key is pressed do this"
 

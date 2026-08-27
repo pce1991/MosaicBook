@@ -1,4 +1,4 @@
-[Download the Mosaic game engine here.](https://etalgames.itch.io/mosaic)
+﻿[Download the Mosaic game engine here.](https://etalgames.itch.io/mosaic)
 
 I recommend for each project you download a fresh version of the engine. That way each of your projects will live in it's own directory such as "assignment1, assignment2" and so on. 
 

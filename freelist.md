@@ -1,4 +1,4 @@
-A free list is a data structure that can help us manage a collection of things by keeping track of which things in that collection are available for reuse.
+﻿A free list is a data structure that can help us manage a collection of things by keeping track of which things in that collection are available for reuse.
 
 Let's say you have an array of objects in a game. We know that you might not be using all the objects in that array every frame, so we can keep track of how many we're using and simply increment the count when we want a new one like this:
 

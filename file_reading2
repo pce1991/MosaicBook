@@ -1,4 +1,4 @@
-
+﻿
 MemoryArena arena = {};
 struct Spot {
     vec4 color;

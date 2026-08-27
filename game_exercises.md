@@ -1,4 +1,4 @@
-
+﻿
 
 ## Warmup
 Here is an exercise you can do to practice for the assignments and get some extra credit. The exercises I post are meant to be completed before the assignment, so this one is to complete before assignment 2. You can get 10 points extra credit for completing it, but the goal is really to give you some practice in isolation that will help you build the larger projects. 

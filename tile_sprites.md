@@ -1,4 +1,4 @@
-
+﻿
 An `MTile` has a few other properties than just color that you can set. Instead of drawing it as a single colored square, you can instead set the tile's `sprite`. When a tile has a sprite you can also adjust it's `scale` and `rotation`. Think of a sprite as a floating image on top of each tile at the center. A sprite uses a `tint` value instead of the color, that way you can still set the color of the square behind the sprite. We assume that the sprite is a grey-scale image, and then the tint simply multiplies itself by whatever the color value of the sprite is. For example of you have a tint of `(1, 0, 0)` and sprite that's all white, each pixel of that sprite will be red. However if the sprite had variation with lighter and darker spots then each pixel of the sprite would scale the tint. 
 
 Now to use a sprite you'll need to load a `png` file off disk. We do this in the following way:

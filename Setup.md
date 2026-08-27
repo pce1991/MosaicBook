@@ -1,4 +1,4 @@
-You will need to download Visual Studio Community Edition 2022. 
+﻿You will need to download Visual Studio Community Edition 2022. 
 
 Install the C++ workload. You can find instructions on doing this [here](https://learn.microsoft.com/en-us/cpp/build/vscpp-step-0-installation?view=msvc-170)
 

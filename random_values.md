@@ -1,4 +1,4 @@
-To generate a random integer value you can use `RandiRange()` which takes two arguments, a min and max value.
+﻿To generate a random integer value you can use `RandiRange()` which takes two arguments, a min and max value.
 
 ```
 int32 r = RandiRange(0, 100);

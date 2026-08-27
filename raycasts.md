@@ -1,4 +1,4 @@
-```
+﻿```
 struct Brick {
     vec2 position;
     vec2 dimensions;

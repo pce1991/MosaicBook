@@ -1,4 +1,4 @@
-To run your game thru Visual Studio for debugging you'll need to do the following:
+﻿To run your game thru Visual Studio for debugging you'll need to do the following:
 1. Compile your program
 2. Open Visual Studio
 3. Select "open project/solution"

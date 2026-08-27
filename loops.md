@@ -1,4 +1,4 @@
-I said in the beginning that there are 3 basic elements of computing: data manipulation (variables, expressions), conditional execution, and loops. We have already learned two, and now comes the third.
+﻿I said in the beginning that there are 3 basic elements of computing: data manipulation (variables, expressions), conditional execution, and loops. We have already learned two, and now comes the third.
 
 Loops are fundamental to any interactive program. To make them interacitve we need some way to repeatedly update what is displayed to the user.
 
@@ -141,7 +141,7 @@ void MyMosaicUpdate() {
 }
 ```
 
-Any interactive program is an iterative process over time. Within that iteration we have other iterations which are over spaces (physical space, samples of an sound wave, number of entities…)
+Any interactive program is an iterative process over time. Within that iteration we have other iterations which are over spaces (physical space, samples of an sound wave, number of entitiesâ€¦)
 That sentence suggests we can put loops inside of loops, which we can!
 
 ```

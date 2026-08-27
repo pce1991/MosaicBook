@@ -1,4 +1,4 @@
-How this documentation works:
+﻿How this documentation works:
 Function names are listed followed by their arguments. If there are multiple overloaded versions of a function all versions will be listed.
 
 ## Input

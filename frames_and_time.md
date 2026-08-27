@@ -1,4 +1,4 @@
-I've said that our function MyMosaicUpdate() is being called from inside a while loop, but so far we haven't really seen any evidence of that. We have been using it as if it runs one time. It has however been running many times, it's just that each time we were telling it to do the same thing. Now we'll use variables to store and change data over time as our update function runs multiple times.
+﻿I've said that our function MyMosaicUpdate() is being called from inside a while loop, but so far we haven't really seen any evidence of that. We have been using it as if it runs one time. It has however been running many times, it's just that each time we were telling it to do the same thing. Now we'll use variables to store and change data over time as our update function runs multiple times.
 
 
 First, instead of declaring my variable inside the scope of MyMosaicUpdate (which means that each time our function runs it we'll declare a variable and give it a value), I'm going to declare it once outside the scope of our function, and then change it's value each time MyMosaicUpdate() executes.
