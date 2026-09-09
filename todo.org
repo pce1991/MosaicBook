@@ -14,6 +14,10 @@
 @TODO: show debug drawing features in Mosaic section.
 
 
+@TODO: show simulating future position of ball in pong for better AI
+
+@TODO: show simluating drag on the ball
+
 * misc
 * incremental steps
 * Pausing

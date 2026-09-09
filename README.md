@@ -68,6 +68,8 @@
 
 [Free List](https://github.com/pce1991/MosaicBook/blob/main/freelist.md)
 
+[Graphs and Trees](https://github.com/pce1991/MosaicBook/blob/main/graphs_and_trees.md)
+
 [Hash Tables](https://github.com/pce1991/MosaicBook/blob/main/hash_tables.md)
 
 [Handles](https://github.com/pce1991/MosaicBook/blob/main/handles.md)
