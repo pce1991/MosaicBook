@@ -17,6 +17,10 @@ DrawLine(V2(3, 0), V2(3, 1), 0.025f, V4(1,0,0,1));
 DrawRay(V2(-5, -5), Rotate(Time, V2(1, 0)), 0.025f, V4(0.0f, 0.5f, 0.8f, 1.0f));
 
 DrawCircle(V2(-5, -5), 1.0f, 0.025f, V4(1));
+
+DrawText(&Core->graphics.monoFont, V2(0, 0), 2.0f, V4(1, 1, 1, 1), true, "Hello");
+DrawTextScreen(&Core->graphics.monoFont, V2(100, 100), 16.0f, V4(1, 1, 1, 1), false, "Screen Text");
+
 ```
 
 
