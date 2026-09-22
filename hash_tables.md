@@ -37,6 +37,7 @@ Not great, but it is an improvement.
 Again, there are many ways to implement a hash table, but the version in Mosaic uses what's known as a `probe` to handle the case of collisions. First, we need to keep an array of bools to note if a slot is occupied or not. Then when we hash a key, before we place it in that slot we need to look to see if that slot is already occupied because of a hash collision. If it isn't, then we simply put the value in the slot. But if it is we simply "probe" forward one index at a time. You can read `hashtable.h` for more details. 
 
 Now for the API. We create a hash table by specifying the type of our keys and the type of our values. 
+We want our key to be `const char *` so we can use string literals, but also because the implementation treats strings slightly differently. Normally keys are simply compared by their values, but for a string key we don't want to compare by the value, as two strings with the same content may have different values because they point to different memory addresses. But we want to treat those strings as the same, so hashtable.h makes an exception for `const char*` and compares the contents of the string instead of simply checking if `a == b`. 
 
 ```
 HashTable<const char *, int32> map = {};
