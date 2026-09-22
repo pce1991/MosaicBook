@@ -39,7 +39,7 @@ Again, there are many ways to implement a hash table, but the version in Mosaic 
 Now for the API. We create a hash table by specifying the type of our keys and the type of our values. 
 
 ```
-HashTable<char *, int32> map = {};
+HashTable<const char *, int32> map = {};
 AllocatehashTable(&map, 1000);
 // There is also a version that takes an allocator if you don't want to allocate with malloc. 
 ```
@@ -74,7 +74,7 @@ struct Ability {
 };
 
 DynamicArray<Ability> abilities;
-HashTable<char *, int32> abilityMap;
+HashTable<const char *, int32> abilityMap;
 //...
 
 AllocateHashTable(&abiblityMap, 64);
