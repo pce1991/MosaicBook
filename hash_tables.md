@@ -41,8 +41,7 @@ We want our key to be `const char *` so we can use string literals, but also bec
 
 ```
 HashTable<const char *, int32> map = {};
-AllocatehashTable(&map, 1000);
-// There is also a version that takes an allocator if you don't want to allocate with malloc. 
+AllocateHashTable(&map, 1000, &arena);
 ```
 
 To add an item you can simply say:
@@ -78,7 +77,7 @@ DynamicArray<Ability> abilities;
 HashTable<const char *, int32> abilityMap;
 //...
 
-AllocateHashTable(&abiblityMap, 64);
+AllocateHashTable(&abiblityMap, 64, &arena);
 
 void AddAbilityToMap(Ability ability) {
    int32 index = PushBack(&abilities, ability);
