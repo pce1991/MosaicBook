@@ -142,6 +142,10 @@ Tests whether two AABBs are overlapping, and if so returns true.
 ### bool RaycastAABB(vec2 min, vec2 max, vec2 orig, vec2 dir, real32 *t)
 Tests the ray described by orig and dir against the boundix box of min and max. Returns true if there is an intersection. It will write out into the t value. Note that dir is expected to be normalized. 
 
+## String Functions
+A number of string functions can be found in string.h and file_io.h
+There are useful for dealing with strings like computing the length, converting a string to an integer, or parsing a floating point number in a file. 
+
 ## Global Varibales
 ### Time
 Gives the current time in seconds since the program launched.
